@@ -8,5 +8,6 @@ class IssuesController < ApplicationController
         lng: issue.longitude
       }
     end
+  end
 
 end

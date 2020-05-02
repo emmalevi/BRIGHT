@@ -1,9 +1,10 @@
-class Issue < ApplicationRecord
+class Charity < ApplicationRecord
   geocoded_by :location
-  # has_many: charities
   after_validation :geocode, if: :will_save_change_to_location?
-  has_many :charity_issues
+  belongs_to :charity_issues
+  has_many :donations
   validates :name, uniqueness: true, presence: true
   validates :description, presence: true
+  validates :rating, presence: true
   has_one_attached :photo
 end

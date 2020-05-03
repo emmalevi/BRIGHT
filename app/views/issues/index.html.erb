@@ -9,7 +9,8 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       >
       </div>
-      <nav class="nav-menu d-none d-lg-block fas fa-skull-crossbones">
+
+      <nav class="nav-menu d-none d-lg-block">
         <ul >
           <li class="active"><a href="#header">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -33,10 +34,20 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control btn",
-        placeholder: "Enter an address"
+        placeholder: "Search for cause or place"
       %>
     <% end %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
   </div>
+
+
+
+          <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+         <ul>
+          <li> <a href="#about">About</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+
 
 
 

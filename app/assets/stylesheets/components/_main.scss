@@ -1067,26 +1067,6 @@ section .container {
   }
 }
 
-/*--------------------------------------------------------------
-# Credits
---------------------------------------------------------------*/
-.credits {
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  font-size: 13px;
-  color: #fff;
-  z-index: 1;
-}
-
-.credits a {
-  color: #18d26e;
-  transition: 0.3s;
-}
-
-.credits a:hover {
-  color: #fff;
-}
 
 @media (max-width: 992px) {
   .credits {
@@ -1111,15 +1091,23 @@ section .container {
   outline: none !important;
   line-height: 1;
 
+
   input{
     border-radius: 6px;
     background: #3C3C3C;
     border: 0;
     width: 120%;
+    margin-top: 26px;
+    margin-left: 9px;
+    font-size: 14px;
+    text-align: left;
+    line-height: 7.5;
   }
+
   i{
     position: relative;
-    left: 35px;
-    top: 11px;
+    left: 210px;
+    top: 35px;
+    color: #A7A6A6;
   }
 }

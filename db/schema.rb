@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_101715) do
+ActiveRecord::Schema.define(version: 2020_05_03_175140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "charities", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "rating"
+    t.integer "total_donors"
+    t.integer "total_donations"
+    t.integer "total_goal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "charity_issues", force: :cascade do |t|
+    t.bigint "issue_id"
+    t.bigint "charity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["charity_id"], name: "index_charity_issues_on_charity_id"
+    t.index ["issue_id"], name: "index_charity_issues_on_issue_id"
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.bigint "charity_id"
+    t.bigint "user_id"
+    t.string "session_id"
+    t.integer "amount_cents", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["charity_id"], name: "index_donations_on_charity_id"
+    t.index ["user_id"], name: "index_donations_on_user_id"
+  end
 
   create_table "issues", force: :cascade do |t|
     t.string "name"
@@ -37,4 +68,8 @@ ActiveRecord::Schema.define(version: 2020_05_01_101715) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "charity_issues", "charities"
+  add_foreign_key "charity_issues", "issues"
+  add_foreign_key "donations", "charities"
+  add_foreign_key "donations", "users"
 end

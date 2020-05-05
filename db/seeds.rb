@@ -25,7 +25,7 @@ issue1 = Issue.create!(
   These cases mostly had links to the Huanan Seafood Whosale Market. The virus that caused the outbreak is known as SARS-CoV-2, which has been related with some animals like bat and pangolin.'
   country: 'China'
   origin: 'It spreads between people during contact'
-  death_count: 244911
+  death_count: '244911'
   impacted_population: 773899
 )
 
@@ -38,7 +38,7 @@ issue2 = Issue.create!(
   Many more cases of pneumonia and KS emerged, alerting US Center for Disease Control and Prevention and a CDC task force was formed to monitor the outbreak.'
   country: 'Botswana'
   origin: 'It interferes more with the inmune system, increasing the risk of infections such as tuberculosis or other infections'
-  death_count: 2389542
+  death_count: '2389542'
   impacted_population: 7573891
 )
 
@@ -51,7 +51,7 @@ issue3 = Issue.create!(
   description: 'Hiroshima was the primary target of the first atomic bombing mission on 6 August. Bombardment Squadron, piloted by Tibbets, took off from North Field about six hours flight from Japan. Enola Gay was accompained by two other B-29s.'
   country: 'Japan'
   origin: 'It was a result of exposure to the blast, heat, or due to radiation'
-  death_count: 600404
+  death_count: '600404'
   impacted_population: 903589
 
 )
@@ -65,7 +65,7 @@ issue4 = Issue.create!(
   description: 'There is only one globally recognized approach for defining and measuring hunger that is generally used by those studying or working to relieve hunger as a social problem whether being men, women or children. Causes that explain the chidroom hunger are malnutrition and food insecurity'
   country: 'Yemen'
   origin: 'On average, children in rural areas are more likely to experience food insecurity and lack access to quality health services.'
-  death_count: 50000000
+  death_count: '50000000'
   impacted_population: 46000000
 )
 
@@ -80,7 +80,7 @@ issue5 = Issue.create!(
  Strong shaking associated with intensity IX on the Modified Mercalli scale was recorded in Port-au-Prince and its suburbs. '
  country: 'Haiti'
  origin: 'The earthquake struck in the most populated area of the country'
- death_count: 316000
+ death_count: '316000'
  impacted_population: 670200
 )
 
@@ -93,7 +93,8 @@ issue6 = Issue.create!(
   description: 'The 2004 Indian Ocean earthquake was initially documented as having a moment magnitude 8.8. In February 2005, scientists revised the estimate of the magnitude 9.0. It was initially large in geographical and geological extent. The tsunami like all others behaved differently in deep water than in shallow water. In deep ocean water, tsunami waves form only a low, broad hump, barely noticeable and harmless, which generally travels at high speed of 500 to 1000 km/h'
   country: 'Indonesia'
   origin: ' One slab of lifting crust essentially rapidly acts as a giant paddle, transferring its energy to the water.'
-  death_count: 227.898
+  death_count: '227898'
+  impacted_population: 355437
 )
 issue6_photo = URI.open('hhttps://images.unsplash.com/photo-1581059686229-de26e6ae5dc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80')
 issue6.photo.attach(io: issue6_photo, filename: 'issue6.jpg' , content_type: 'image/jpg')

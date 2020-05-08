@@ -3,8 +3,14 @@ skip_before_action :authenticate_user!, except: [:home, :show]
 before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @issues = Issue.all
+    if params[:query].present?
+      @query = params[:query]
+      @issues = Issue.where("name iLike '%#{params[:query]}%'")
+    else
+      @Issues = Issue.all
+    end
   end
+
 
   def map
     @issues = Issue.geocoded #returns issues with coordinates

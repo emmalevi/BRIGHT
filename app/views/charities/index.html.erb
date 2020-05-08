@@ -1,10 +1,13 @@
-<h1>Involved Charities</h1>
+<div class="container bg-dark text-white">
 
-<ul>
-  <% @charities.each do |charity| %>
-    <li><%= charity.name %></li>
-    <li><%= charity.description %></li>
-    <li>Total donations: <%= charity.total_donations %></li>
-    <li>Rating: <%= charity.rating %></li>
-  <% end %>
-</ul>
+  <h1>Involved Charities</h1>
+
+  <ul>
+    <% @charities.each do |charity| %>
+      <li><%= charity.name %></li>
+      <li><%= charity.description %></li>
+      <li>Total donations: <%= charity.total_donations %></li>
+      <li>Rating: <%= charity.rating %></li>
+    <% end %>
+  </ul>
+</div>

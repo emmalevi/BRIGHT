@@ -10,6 +10,7 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
     @issues = Issue.geocoded #returns issues with coordinates
     @markers = @issues.map do |issue|
       {
+        infoWindow: render_to_string(partial: "info_window", locals: { issue: issue }),
         lat: issue.latitude,
         lng: issue.longitude
       }

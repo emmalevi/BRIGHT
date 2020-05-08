@@ -1,57 +1,8 @@
- <!-- ======= Header ======= -->
-  <div id="header" class="header-tops">
-    <div class="container no-pad">
-      <div
-        id="map"
-        style="width: 100vw;
-        height: 100vh;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      >
-      </div>
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul >
-          <li class="active"><a href="#header">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
 
 
-<!--       <div class="social-links">
-        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-      </div> -->
-    </div>
-  </div>
+<h1> All issues </h1>
+<%  @issues %>
 
-  <div class="row search-bar">
-    <i class="fas fa-search"></i>
-    <%= form_tag issues_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control btn",
-        placeholder: "Search for cause or place"
-      %>
-    <% end %>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
-  </div>
-
-
-
-          <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-         <ul>
-          <li> <a href="#about">About</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
-
-
-
-
-  <!-- End Header -->
 
   <!-- ======= About Section ======= -->
   <section id="about" class="about">

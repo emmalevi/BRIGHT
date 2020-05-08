@@ -1,7 +1,7 @@
 class CharitiesController < ApplicationController
 
   def index
-    @charities = Issue.find(params[:charity_id]).charities
+    @charities = Issue.find(params[:issue_id]).charities
   end
 
   def show

@@ -10,7 +10,11 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
   </head>
-  <body>
+  <%# unless current_page?(:controller => 'users', :action => 'index') %> %>
+<!--     <body class=bg)>
+  <%# else %>
+    <body>
+  <%# end %> -->
     <%#= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>

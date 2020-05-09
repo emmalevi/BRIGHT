@@ -25,7 +25,7 @@ end
 
 
   def show
-    @issue= Issue.find(params[:id])
+    @issue = Issue.find(params[:id])
     @user = current_user
     @capitalized_name = @issue.name.split.map { |word| word.capitalize }.join(" ")
   end
@@ -33,7 +33,7 @@ end
 
 private
   def set_issue
-    @issue= issue.find(params[:id])
+    @issue = Issue.find(params[:id])
   end
 
   def issue_params

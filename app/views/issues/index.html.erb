@@ -24,11 +24,11 @@
               <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap">
 
-                  <img src=<%= cl_image_path issue.photo.key, width: 400, height: 300, crop: :fill%> class="img-fluid" alt="">
+                  <img src=<%= cl_image_path issue.photo.key, width: 400, height: 300, crop: :fill %> class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4> <%= issue.name %></h4>
                     <p> <%= issue.issue_type %></p>
-                    <%= link_to 'Act', root_path, id:'issuecta' %>
+                    <%= link_to 'Act', issue_path(issue), id:'issuecta' %>
                   </div>
                 </div>
               </div>
@@ -37,6 +37,5 @@
         </div>
       </section>
   <!-- End Issues Index Section -->
-
 </div>
 

@@ -1,66 +1,42 @@
-<!-- ======= Issues Index Section ======= -->
-  <section id="portfolio" class="portfolio">
-    <div class="container">
-      <div class="section-title">
-        <h2>Portfolio</h2>
-        <p>My Works</p>
-      </div>
-      <div class="row">
-        <div class="col-lg-8 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">Pandemic</li>
-            <li data-filter=".filter-card">Worldwide Issue</li>
-            <li data-filter=".filter-web">Natural Disaster</li>
-          </ul>
-        </div>
-      </div>
-      <div class="row portfolio-container">
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="https://images.unsplash.com/photo-1584582868986-db1781714c75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>CoronaVirus</h4>
-              <p>Pandemic</p>
+<div class="issue-index">
+  <!-- ======= Issues Index Section ======= -->
+      <div id="portfolio" class="portfolio">
+        <div class="container">
+          <div class="section-title">
+            <h2>BRIGHT</h2>
+            <p>All issues</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 d-flex justify-content-center">
+              <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">All</li>
+                <li data-filter=".filter-app">Pandemic</li>
+                <li data-filter=".filter-card">Worldwide Issue</li>
+                <li data-filter=".filter-web">Natural Disaster</li>
+              </ul>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="https://images.unsplash.com/photo-1585378335564-c220f04a9ad0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Aids</h4>
-              <p>Worldwide issue</p>
-            </div>
+
+
+
+          <div class="row portfolio-container">
+            <% @issues.each do |issue| %>
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+
+                  <img src=<%= cl_image_path issue.photo.key, width: 400, height: 300, crop: :fill%> class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4> <%= issue.name %></h4>
+                    <p> <%= issue.issue_type %></p>
+                    <%= link_to 'Act', root_path, id:'issuecta' %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="https://images.unsplash.com/photo-1544513566-b4de3719ee70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Haiti Earthquake</h4>
-              <p>Natural Disaster</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="https://images.unsplash.com/photo-1507427100689-2bf8574e32d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Children Hunger</h4>
-              <p>Worldwide issue</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Hiroshima Radiation</h4>
-              <p>Worldwide issue</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section><!-- End Issues Index Section -->
+      </section>
+  <!-- End Issues Index Section -->
+
+</div>
+

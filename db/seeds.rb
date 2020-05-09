@@ -32,8 +32,10 @@ issue1 = Issue.create!(
   impacted_population: 773899
 )
 
-issue1_photo = URI.open('https://images.unsplash.com/flagged/photo-1584036561584-b03c19da874c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+
+issue1_photo = URI.open('https://blog.scopus.com/sites/default/files/coronavirus-image-iStock-628925532-full-width-wide_0.jpg')
 issue1.photo.attach(io: issue1_photo, filename: 'issue1.jpg' , content_type: 'image/jpg')
+
 
 issue2 = Issue.create!(
   name: 'AIDS',
@@ -45,7 +47,9 @@ issue2 = Issue.create!(
   impacted_population: 7573891
 )
 
-issue2_photo = URI.open('https://images.pexels.com/photos/3900425/pexels-photo-3900425.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+
+
+issue2_photo = URI.open('https://www.who.int/images/default-source/big-stories/ten-threats-to-global-health/hiv-ru.jpg?sfvrsn=7697577e_14')
 issue2.photo.attach(io: issue2_photo, filename: 'issue2.jpg' , content_type: 'image/jpg')
 
 
@@ -60,8 +64,21 @@ issue3 = Issue.create!(
 
 )
 
-issue3_photo = URI.open('https://ichef.bbci.co.uk/news/800/cpsprodpb/12659/production/_101235357_hi023345454.jpg')
+issue3_photo = URI.open('https://images.unsplash.com/photo-1574088768469-53d8a7839bf1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
 issue3.photo.attach(io: issue3_photo, filename: 'issue3.jpg' , content_type: 'image/jpg')
+
+issue5 = Issue.create!(
+ name: 'Haiti Earthquake',
+ issue_type: 'Natural Disaster',
+ description: 'The magnitude 7.0 earthquake ocurred in land on 12 January 2010 at 16:53 approximately 25 km from Port-au-Prince at a depth of 13 km. There is no evidence of surface rupture and based on seismological and geological information data it is thought that the earthquake did not involve significant lateral slip on the main fault. Strong shaking associated with intensity IX on the Modified Mercalli scale was recorded in Port-au-Prince and its suburbs.',
+ location: 'Haiti',
+ origin: 'The earthquake struck in the most populated area of the location',
+ death_count: '316000',
+ impacted_population: 670200
+)
+
+issue5_photo = URI.open('https://www.dw.com/image/52148088_303.jpg')
+issue5.photo.attach(io: issue5_photo, filename: 'issue5.jpg' , content_type: 'image/jpg')
 
 
 issue4 = Issue.create!(
@@ -78,23 +95,8 @@ issue4_photo = URI.open('https://images.unsplash.com/photo-1507427100689-2bf8574
 issue4.photo.attach(io: issue4_photo, filename: 'issue4.jpg' , content_type: 'image/jpg')
 
 
-
-issue5 = Issue.create!(
- name: 'Haiti Earthquake',
- issue_type: 'Natural Disaster',
- description: 'The magnitude 7.0 earthquake ocurred in land on 12 January 2010 at 16:53 approximately 25 km from Port-au-Prince at a depth of 13 km. There is no evidence of surface rupture and based on seismological and geological information data it is thought that the earthquake did not involve significant lateral slip on the main fault. Strong shaking associated with intensity IX on the Modified Mercalli scale was recorded in Port-au-Prince and its suburbs.',
- location: 'Haiti',
- origin: 'The earthquake struck in the most populated area of the location',
- death_count: '316000',
- impacted_population: 670200
-)
-
-issue5_photo = URI.open('https://xmagazinenews.files.wordpress.com/2010/12/2004-tsunami.jpg?w=320&h=210')
-issue5.photo.attach(io: issue5_photo, filename: 'issue5.jpg' , content_type: 'image/jpg')
-
-
 issue6 = Issue.create!(
-  name: 'Indian Ocean Earthquake and Tsunami',
+  name: 'Indian Ocean Earthquake',
   issue_type: 'Natural Disaster',
   description: 'The 2004 Indian Ocean earthquake was initially documented as having a moment magnitude 8.8. In February 2005, scientists revised the estimate of the magnitude 9.0. It was initially large in geographical and geological extent. The tsunami like all others behaved differently in deep water than in shallow water. In deep ocean water, tsunami waves form only a low, broad hump, barely noticeable and harmless, which generally travels at high speed of 500 to 1000 km/h',
   location: 'Indonesia',

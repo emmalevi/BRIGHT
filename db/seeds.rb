@@ -24,7 +24,7 @@ puts "Creating new issues"
 
 issue1 = Issue.create!(
   name: 'Coronavirus',
-  type: 'Pandemic',
+  issue_type: 'Pandemic',
   description: 'Health authorities in Wuhan reported a cluster of viral pneumonia cases of unknown case on December 2019, and an investigation was launched in early January 2020. These cases mostly had links to the Huanan Seafood Whosale Market. The virus that caused the outbreak is known as SARS-CoV-2, which has been related with some animals like bat and pangolin.',
   location: 'China',
   origin: 'It spreads between people during contact',
@@ -37,7 +37,7 @@ issue1.photo.attach(io: issue1_photo, filename: 'issue1.jpg' , content_type: 'im
 
 issue2 = Issue.create!(
   name: 'AIDS',
-  type: 'Pandemic',
+  issue_type: 'Pandemic',
   description: 'Its first cases were discovered in US in 1981, initial cases were a cluster of injecting drugs users and homosexual men with no known cause of impaired immunity who showed symptoms pneumonia. Soon thereafter, an unexpected number of homosexual men developed a previously rare skin cancer called Kaposis sarcoma. Many more cases of pneumonia and KS emerged, alerting US Center for Disease Control and Prevention and a CDC task force was formed to monitor the outbreak.',
   location: 'Botswana',
   origin: 'It interferes more with the inmune system, increasing the risk of infections such as tuberculosis or other infections',
@@ -51,7 +51,7 @@ issue2.photo.attach(io: issue2_photo, filename: 'issue2.jpg' , content_type: 'im
 
 issue3 = Issue.create!(
   name: 'Hiroshima Radiation',
-  type: 'Worldwide Issue',
+  issue_type: 'Worldwide Issue',
   description: 'Hiroshima was the primary target of the first atomic bombing mission on 6 August. Bombardment Squadron, piloted by Tibbets, took off from North Field about six hours flight from Japan. Enola Gay was accompained by two other B-29s.',
   location: 'Japan',
   origin: 'It was a result of exposure to the blast, heat, or due to radiation',
@@ -66,7 +66,7 @@ issue3.photo.attach(io: issue3_photo, filename: 'issue3.jpg' , content_type: 'im
 
 issue4 = Issue.create!(
   name: 'Children Hunger',
-  type: 'Worldwide Issue',
+  issue_type: 'Worldwide Issue',
   description: 'There is only one globally recognized approach for defining and measuring hunger that is generally used by those studying or working to relieve hunger as a social problem whether being men, women or children. Causes that explain the chidroom hunger are malnutrition and food insecurity',
   location: 'Yemen',
   origin: 'On average, children in rural areas are more likely to experience food insecurity and lack access to quality health services.',
@@ -81,7 +81,7 @@ issue4.photo.attach(io: issue4_photo, filename: 'issue4.jpg' , content_type: 'im
 
 issue5 = Issue.create!(
  name: 'Haiti Earthquake',
- type: 'Natural Disaster',
+ issue_type: 'Natural Disaster',
  description: 'The magnitude 7.0 earthquake ocurred in land on 12 January 2010 at 16:53 approximately 25 km from Port-au-Prince at a depth of 13 km. There is no evidence of surface rupture and based on seismological and geological information data it is thought that the earthquake did not involve significant lateral slip on the main fault. Strong shaking associated with intensity IX on the Modified Mercalli scale was recorded in Port-au-Prince and its suburbs.',
  location: 'Haiti',
  origin: 'The earthquake struck in the most populated area of the location',
@@ -95,7 +95,7 @@ issue5.photo.attach(io: issue5_photo, filename: 'issue5.jpg' , content_type: 'im
 
 issue6 = Issue.create!(
   name: 'Indian Ocean Earthquake and Tsunami',
-  type: 'Natural Disaster',
+  issue_type: 'Natural Disaster',
   description: 'The 2004 Indian Ocean earthquake was initially documented as having a moment magnitude 8.8. In February 2005, scientists revised the estimate of the magnitude 9.0. It was initially large in geographical and geological extent. The tsunami like all others behaved differently in deep water than in shallow water. In deep ocean water, tsunami waves form only a low, broad hump, barely noticeable and harmless, which generally travels at high speed of 500 to 1000 km/h',
   location: 'Indonesia',
   origin: ' One slab of lifting crust essentially rapidly acts as a giant paddle, transferring its energy to the water.',

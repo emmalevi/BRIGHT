@@ -5,6 +5,16 @@
 .issue-show{
     background-color: black;
 
+.resume {
+  padding-top: 8%;
+}
+
+#img-show {
+  max-width: 95%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 35px;
+}
 
 
     /*--------------------------------------------------------------
@@ -54,6 +64,8 @@
 
     .resume .resume-item:last-child {
       padding-bottom: 0;
+      padding-right: 9px
+
     }
 
     .resume .resume-item::before {

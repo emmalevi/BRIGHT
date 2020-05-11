@@ -1,9 +1,32 @@
-<div class="container bg-dark text-white">
-  <h1> <%= @charity.name %></h1>
+<div class="issue-show">
+  <div class="container ml-2">
+    <div id="resume" class="resume">
+      <div class="section-title">
+        <h1><%= @charity.name %></h1>
+      </div>
 
-  <p><%= @charity.description %></p>
+      <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="img-fluid my-3" alt="">
 
-  <p>Total donations: <%= @charity.total_donations %></p>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="resume-item pb-0">
+            <h4>Charity Background</h4>
+            <p><%= @charity.description %></p>
 
-  <p>Rating: <%= @charity.rating %></p>
+            <div class="resume-item">
+              <h4>Numbers</h4>
+              <p>Total donations: <%= @charity.total_donations %></p>
+            </div>
+
+            <div class="resume-item">
+              <h4>Ranking</h4>
+              <p>Rating: <%= @charity.rating %></p>
+            </div>
+
+            <button type="button" class="btn btn-outline-success">Donate Now!</button>
+          </div>
+        </div>
+       </div>
+    </div>
+  </div>
 </div>

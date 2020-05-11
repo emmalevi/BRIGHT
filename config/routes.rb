@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   root to: 'issues#map'
 
 #Issues
-  resources :issues, only: [:index, :show] do
-    resources :charities, only: :index
-  end
+  resources :issues, only: [:index, :show]
 
 #Charities
   resources :charities, only: :show do

@@ -2,11 +2,15 @@
   <div class="container ml-2">
     <div id="resume" class="resume">
       <div class="section-title">
-        <h1><%= @charity.name %></h1>
+        <% if @charity.issues.any?  %>
+          <h2> <%= @charity.issues.first.name  %></h2>
+          <% else %>
+          <h2 id="logo">BRIGHT</h2>
+        <% end %>
+        <p><%= @charity.name %></p>
       </div>
 
       <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="img-fluid my-3" alt="">
-
       <div class="row">
         <div class="col-lg-6">
           <div class="resume-item pb-0">
@@ -23,7 +27,7 @@
               <p>Rating: <%= @charity.rating %></p>
             </div>
 
-            <button type="button" class="btn btn-outline-success">Donate Now!</button>
+            <button type="button" id="issuecta">Donate Now!</button>
           </div>
         </div>
        </div>

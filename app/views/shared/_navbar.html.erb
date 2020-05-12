@@ -4,6 +4,6 @@
     <li> <%= image_tag "https://media-exp1.licdn.com/dms/image/C5603AQFC8XqIo84XEQ/profile-displayphoto-shrink_200_200/0?e=1594252800&v=beta&t=Hf4plwX8l6V2K3_co70BWYvWFNZ9lS9tFYeD0_2AhKw", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" } %> </li>
     <li> <%= link_to 'Profile', issues_path %> </li>
     <li> <%= link_to 'All issues', issues_path %> </li>
-    <li> <%= link_to 'Log out', issues_path %> </li>
+    <li> <%= link_to 'Log out',  destroy_user_session_path, method: :delete %> </li>
   </ul>
 </nav>

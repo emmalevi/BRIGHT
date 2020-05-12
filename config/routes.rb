@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   end
 
 get "donations/:id", to: "donations#show", as: :donation
+get 'dashboard', to: 'dashboard#new'
 
 end

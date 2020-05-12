@@ -134,4 +134,30 @@ charity3 = Charity.create!(
   rating: "3"
 )
 
-puts "Seeds completed"
+
+charity4 = Charity.create!(
+  name: 'Worldwide CARE'
+  description: 'Taking care of human disasters'
+  issues: [issue6]
+  total_donations: 185000000
+  rating: "4"
+)
+
+charity5 = Charity.create!(
+  name: 'Direct Relief'
+  description: 'Humanitarian organization, active in all 50 states and more than 80 countries.'
+  issues: [issue1]
+  total_donations: 259723786
+  rating: "4"
+)
+
+charity6 = Charity.create!(
+ name: 'Radiation Effects Research Foundation'
+ description: 'Binational research organization which investigates the health effects of atomic bomb radiation among survivors in Hiroshima and Nagasaki'
+ issues: [issue3]
+ total_donations: 0
+ rating: "2"
+)
+
+puts "Seeds completed!"
+

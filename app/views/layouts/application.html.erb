@@ -3,19 +3,31 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>BRight</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Outline|Paytone+One|Roboto+Condensed:700&display=swap" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
   </head>
-  <body>
+    <body>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
     <%= yield %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+      <script src="assets/js/main.js"></script>
+       <script src="assets/jquery/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/php-email-form/validate.js"></script>
+  <script src="assets/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/counterup/counterup.min.js"></script>
+  <script src="assets/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/venobox/venobox.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
   </body>
 </html>

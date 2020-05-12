@@ -11,3 +11,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "issues/index";
+
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  position: relative;
+  background: transparent;
+}
+
+.bg-black{
+  background-color: black;
+}

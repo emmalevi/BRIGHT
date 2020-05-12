@@ -9,16 +9,18 @@ require 'open-uri'
 
 puts "Destroying current database"
 
+Donation.destroy_all
+CharityIssue.destroy_all
 Issue.destroy_all
 User.destroy_all
 Charity.destroy_all
 
-user1 = User.create!(name: "Bob", email: "bob@gmail.com", password: "012345")
-user2 = User.create!(name: "Jake", email: "jake@gmail.com", password:"abc123")
-user3 = User.create!(name: "Ryan", email: "ryan@gmail.com", password: "def456")
+
+user1 = User.create(email: "bob@gmail.com", password: "012345")
+user2 = User.create(email: "jake@gmail.com", password:"abc123")
+user3 = User.create(email: "ryan@gmail.com", password: "def456")
 
 puts "Creating new issues"
-
 
 issue1 = Issue.create!(
   name: 'Coronavirus',
@@ -132,6 +134,7 @@ charity3 = Charity.create!(
   rating: "3"
 )
 
+
 charity4 = Charity.create!(
   name: 'Worldwide CARE'
   description: 'Taking care of human disasters'
@@ -157,3 +160,4 @@ charity6 = Charity.create!(
 )
 
 puts "Seeds completed!"
+

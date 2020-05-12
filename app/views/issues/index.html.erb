@@ -1,7 +1,43 @@
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+<div class="issue-index">
+  <div id="resume" class="resume">
+    <div class="container">
+  <!-- ======= Issues Index Section ======= -->
+      <div id="portfolio" class="portfolio">
+        <div class="container">
+          <div class="section-title">
+            <h2>BRIGHT</h2>
+            <p>All issues</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 d-flex justify-content-center">
+              <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">All</li>
+                <li data-filter=".filter-app">Health</li>
+                <li data-filter=".filter-card">Environmental</li>
+                <li data-filter=".filter-web">Natural Disaster</li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <div class="row portfolio-container">
+            <% @issues.each do |issue| %>
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+
+                  <img src=<%= cl_image_path issue.photo.key, width: 400, height: 300, crop: :fill %> class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4> <%= issue.name %></h4>
+                    <p> <%= issue.issue_type %></p>
+                    <%= link_to 'Act', issue_path(issue), id:'issuecta' %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </section>
+  <!-- End Issues Index Section -->
+</div>
+

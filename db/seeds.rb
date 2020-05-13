@@ -137,7 +137,7 @@ charity3 = Charity.create!(
 
 charity4 = Charity.create!(
   name: 'Worldwide CARE'
-  description: 'Taking care of human disasters'
+  description: 'Taking care of human disasters.'
   issues: [issue6]
   total_donations: 185000000
   rating: "4"

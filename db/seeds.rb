@@ -143,13 +143,6 @@ charity4 = Charity.create!(
   rating: "4"
 )
 
-charity5 = Charity.create!(
-  name: 'Direct Relief',
-  description: 'Humanitarian organization, active in all 50 states and more than 80 countries.',
-  issues: [issue1],
-  total_donations: 259723786,
-  rating: "4"
-)
 
 charity6 = Charity.create!(
  name: 'Radiation Effects Research Foundation',
@@ -226,7 +219,7 @@ charity14 = Charity.create!(
 charity15 = Charity.create!(
   name: 'Direct Relief',
   description: 'Direct Relief is a humanitarian organization, active in all 50 states and more than 80 countries, with a mission to improve the health and lives of people affected by poverty or emergencies.',
-  issues: [issue5],
+  issues: [issue5, issue1],
   total_donations: 2000000,
   rating: "4"
 )

@@ -91,21 +91,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-#header .social-links a {
+.social-links a {
   font-size: 16px;
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  line-height: 1;
+  line-height: 3;
   margin-right: 8px;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
 }
 
-#header .social-links a:hover {
+.social-links a:hover {
   background: #18d26e;
 }
 
@@ -447,5 +447,39 @@ section .container {
   }
 }
 
+#issuecta {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 16px 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fff;
+    background: #18d26e;
+    margin: 0 3px 10px 3px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 4px;
+    margin-top: 25px;
+  }
 
+
+.ecarter {
+padding:40px;
+}
+
+#maincta {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 16px 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fff;
+    background: #18d26e;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    margin: 10px;
+  }
 

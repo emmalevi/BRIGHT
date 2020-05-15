@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   #Charities
   resources :charities, only: :show do
-    resources :donations, only: [:new, :create]
+    resources :donations, only: [:new, :create] do
+      resources :payments, only: :new
+  end
   end
 
   get "donations/:id", to: "donations#show", as: :donation

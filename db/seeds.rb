@@ -159,5 +159,102 @@ charity6 = Charity.create!(
  rating: "2"
 )
 
+charity7 = Charity.create!(
+  name: 'International Rescue Comitee'
+  description: ' It responds to the world humanitarian crises, helping restore health, safety, economic well being and power to people devastated by conflict and disaster.'
+  issues: [issue1]
+  total_donations: 278589143
+  rating: "4"
+)
+
+charity8 = Charity.create!(
+  name: 'CDC Foundation'
+  description: 'Independent non-profit and the sole entity created by Congress to mobilize philantropic and private-sector resources to support the Centers for Disease Control and Prevention health protection work'
+  issues: [issue1]
+  total_donations: 52872451
+  rating: "4"
+)
+
+charity9 = Charity.create!(
+  name: 'AIDS United'
+  description: 'It was established in 1980s in response to the government on-going inaction to the AIDS crisis'
+  issues: [issue2]
+  total_donations: 11794750
+  rating: "3"
+)
+
+charity10 = Charity.create!(
+  name: 'amfAR'
+  description: 'It is one of the most important funders of HIV research in the world'
+  issues: [issue2]
+  total_donations: 47731778
+  rating: "3"
+)
+
+charity11 = Charity.create!(
+  name: 'American Friends Service Committee'
+  description: 'It commemorates some historic facts'
+  issues: [issue3]
+  total_donations: 0
+  rating: "1"
+)
+
+charity12 = Charity.create!(
+  name: 'Atomic Heritage Foundation'
+  description: 'It has too much history about actomic bomb used in wars'
+  issues: [issue3]
+  total_donations: 0
+  rating: "2"
+)
+
+charity13 = Charity.create!(
+  name: 'Mealshare'
+  description: 'Committed to ending youth hunger within their lifetime. Their methods enable and empower people everywhere to join their mission without asking for participants to make changes in their own lives.'
+  issues: [issue4]
+  total_donations: 3681209
+  rating: "3"
+)
+
+charity14 = Charity.create!(
+  name: 'No Kid Hungry'
+  description: 'No Kid Hungry is all about education. They work to educate kids and parents that encourage and empower American families to stretch every dollar into more meals and healthier meals at home.'
+  issues: [issue4]
+  total_donations: 57600000
+  rating: "4.5"
+)
+
+charity15 = Charity.create!(
+  name: 'Direct Relief'
+  description: 'Direct Relief is a humanitarian organization, active in all 50 states and more than 80 countries, with a mission to improve the health and lives of people affected by poverty or emergencies.'
+  issues: [issue5]
+  total_donations: 2000000
+  rating: "4"
+)
+
+charity16 = Charity.create!(
+  name: 'Haitian Health Foundation'
+  description: 'Its mission is to improve the health and well-being of women, children, familes and communities living through healthcare, education and community development.'
+  issues: [issue5]
+  total_donations: 2938579
+  rating: "3.5"
+)
+
+charity17 = Charity.create!(
+  name: 'American Jewish Committee'
+  description: 'Jewish advocacy group established in 11 November 1906. It is one of the oldest Jewish organizations.'
+  issues: [issue6]
+  total_donations: 450000
+  rating: "3"
+)
+
+charity18 = Charity.create!(
+  name: 'Humanity First'
+  description: 'International charity that provides disaster relief and long term development assistance to vulnerable communities in 52 countries across 6 continents.'
+  issues: [issue6]
+  total_donations: 1500000
+  rating: "3"
+)
+
+
 puts "Seeds completed!"
 

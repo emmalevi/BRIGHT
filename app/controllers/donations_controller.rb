@@ -2,7 +2,6 @@ class DonationsController < ApplicationController
 
   def show
     @donation = Donation.find(params[:id])
-    # @donation.charity will give me charity
   end
 
 # def new

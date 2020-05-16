@@ -256,5 +256,7 @@ charity18 = Charity.create!(
 )
 
 
+
+
 puts "Seeds completed!"
 

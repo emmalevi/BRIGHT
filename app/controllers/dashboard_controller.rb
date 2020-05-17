@@ -6,10 +6,10 @@ class DashboardController < ApplicationController
 	  @issues = Issue.all
 
 	end
-    
 
-    
- 
+
+
+
 
 
 

@@ -27,6 +27,10 @@
               <p>Rating: <%= @charity.rating %></p>
             </div>
 
+<%#= form_tag donations_path do %>
+  <%#= hidden_field_tag 'charity_id', @charity.id %>
+  <%#= submit_tag 'Donate now!', id:'issuecta' %>
+<%# end %>
             <%= link_to 'Donate now!', charity_donation_path, id:'issuecta' %>
           </div>
         </div>

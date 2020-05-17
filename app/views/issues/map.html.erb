@@ -2,24 +2,24 @@
 <div id="header" class="header-tops">
   <div class="container no-pad">
     <div
-    id="map"
-    style="width: 100vw;
-    height: 100vh;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      id="map"
+      style="width: 100vw;
+      height: 100vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     >
+    </div>
   </div>
-</div>
 
-<div class="row search-bar">
-     <p id="logomap">BRIGHT</p>
-  <!-- <i class="fas fa-search"></i> -->
-  <%= form_tag issues_path, method: :get do %>
-  <%= text_field_tag :query,
-  params[:query],
-  class: "form-control btn",
-    placeholder: "Search for cause or place"
-    %>
+  <div class="row search-bar">
+    <p id="logomap">BRIGHT</p>
+    <!-- <i class="fas fa-search"></i> -->
+    <%= form_tag issues_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control btn",
+        placeholder: "Search for cause or place"
+      %>
     <% end %>
   </div>
 </div>

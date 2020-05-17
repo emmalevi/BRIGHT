@@ -3,10 +3,10 @@ class IssuesController < ApplicationController
   before_action :set_issue, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].present?
+    if params[:query].present? #display search results for issues
       @query = params[:query]
-      @issues = Issue.where("name iLike '%#{params[:query]}%'")
-    else
+      @issues = Issue.search_by_name_location_and_description(@query)
+    else #display all issues if no search was done
       @issues = Issue.all
     end
   end
@@ -21,7 +21,6 @@ class IssuesController < ApplicationController
       }
     end
   end
-
 
   def show
     @issue = Issue.find(params[:id])

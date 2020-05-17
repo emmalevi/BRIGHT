@@ -8,4 +8,13 @@ class Issue < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   validates :description, presence: true
   validates :location, presence: true
+
+  # Searches for a keyword in name, location and description,
+  # displaying results in this order.
+  include PgSearch
+  pg_search_scope :search_by_name_location_and_description, :against => {
+    :name => 'A',
+    :location => 'B',
+    :description => 'C'
+  }
 end

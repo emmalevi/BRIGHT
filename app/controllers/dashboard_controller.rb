@@ -7,10 +7,10 @@ class DashboardController < ApplicationController
 	  @donations = current_user.donations
 
 	end
-    
 
-    
- 
+
+
+
 
 
 

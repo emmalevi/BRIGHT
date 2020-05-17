@@ -11,7 +11,6 @@ const buildMap = () => {
 };
 
 
-
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
 
@@ -24,6 +23,7 @@ const addMarkersToMap = (map, markers) => {
       .addTo(map);
   });
 };
+
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
@@ -41,8 +41,6 @@ const initMapbox = () => {
     }
   }
 };
-
-
 
 
 export { initMapbox };

@@ -9,4 +9,10 @@ class User < ApplicationRecord
   def donations_sum
   	self.donations.pluck(:amount_cents).sum / 100
   end
+
+def username
+  email = self.email.split('@')
+  return email.first
+end
+
 end

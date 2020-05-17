@@ -78,15 +78,15 @@
 				<h2>Past Donations</h2>
 				<div class="content">
 					<div class="cards">
-						<% @issues.each do |issue| %>
+						<% @donations.each do |d| %>
 						<li>
-							<% if issue.photo.attached? %>
-							<% background_url = cl_image_path issue.photo.key, width: 400, height: 500, crop: :fill %>
+							<% if d.issue.photo.attached? %>
+							<% background_url = cl_image_path d.issue.photo.key, width: 400, height: 500, crop: :fill %>
 							<% else %>
 							<% background_url = 'https://images.unsplash.com/photo-1585859537744-6e62df9b9a5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80' %>
 							<% end %>
 							<div class="card" style="background-image:url('<%= background_url %>')">
-								<%= link_to 'Donate Again', issue_path(issue) %>
+								<%= link_to 'Donate Again', issue_path(d.issue) %>
 							</div>
 						</li>
 						<% end %>

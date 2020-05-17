@@ -2,10 +2,16 @@
 
 .dashboardcontainer h2 {
   text-align: center;
-  color: black
+  color: white
 
 }
 
+.container .your-container h2 {
+
+  text-align: center;
+  color: white
+
+}
 /*
 Below here is the styling for the avatar circle
 */
@@ -112,20 +118,9 @@ Everything below here belongs to the product cards
 
 */
 
-.card {
-  background-size: cover;
-  background-position: center;
-  height: 150px;
-  border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-size: 22px;
-  color: white;
-  font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
-}
+
+
+
 
 
 
@@ -203,11 +198,16 @@ Everything below here belongs to the causes and map layout
   color: white;
   font-weight: bolder;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
+
+}
+
+.cards > li {
+  list-style-type: none;
 }
 
 #mapdashboard {
     width: max-content;
-    height: max-contentx;
+    height: max-content;
   top: 40px;
 }
 

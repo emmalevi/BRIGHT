@@ -2,15 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'issues#map'
 
-#Issues
+  #Issues
   resources :issues, only: [:index, :show]
 
-#Charities
+  #Charities
   resources :charities, only: :show do
     resources :donations, only: [:new, :create]
   end
 
-get "donations/:id", to: "donations#show", as: :donation
-get 'dashboard', to: 'dashboard#new'
+  get "donations/:id", to: "donations#show", as: :donation
+  get 'dashboard', to: 'dashboard#new'
 
 end

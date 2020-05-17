@@ -1,7 +1,6 @@
 class IssuesController < ApplicationController
-skip_before_action :authenticate_user!, except: [:home, :show]
-before_action :set_issue, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticate_user!
+  before_action :set_issue, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:query].present?
@@ -9,8 +8,8 @@ before_action :set_issue, only: [:show, :edit, :update, :destroy]
       @issues = Issue.where("name iLike '%#{params[:query]}%'")
     else
       @issues = Issue.all
+    end
   end
-end
 
   def map
     @issues = Issue.geocoded #returns issues with coordinates
@@ -30,8 +29,7 @@ end
     @capitalized_name = @issue.name.split.map { |word| word.capitalize }.join(" ")
   end
 
-
-private
+  private
   def set_issue
     @issue = Issue.find(params[:id])
   end
@@ -39,6 +37,5 @@ private
   def issue_params
     params.require(:issue).permit(:name, :description, :location, :origin, :death_count, :impacted_population, :photo)
   end
-
 end
 

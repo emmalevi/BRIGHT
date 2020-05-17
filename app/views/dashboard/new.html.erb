@@ -1,109 +1,106 @@
 <div class="dashboardcontainer">
+	
+
+		<div id="image-avatar">
+		<% if current_user && current_user.avatar.attached? %>
+	        <%= cl_image_tag(current_user.avatar.key, class: "img-circle", width: "100px") %>
+	    <% else %>
+	        <%= image_tag "https://cdn3.iconfinder.com/data/icons/essential-rounded/64/Rounded-31-512.png", class: "img-circle", width: "100px"%>
+	    <% end %>
+	    </div>
+
+
 	<h2>Hi, <%= @username.capitalize %>, welcome to your Dashboard</h2>
-
-
 </div>
-
-
-
-	<div class="container">
+<div class="container">
 	<div class="row no-gutters">
-	<div class="col-lg-4 col-md-4 col-12 p-4">
+		
 
-	<div class="card-product">
-		  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-		  <div class="card-product-infos">
-		    <h2>Ranking</h2>
-		    <p>First Place!</p>
-		  </div>
-	</div>
-
-	</div>
-
-
-
-
-	<div class="col-lg-4 col-md-4 col-12 p-4">
-
-	<div class="card-product">
-		  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-		  <div class="card-product-infos">
-		    <h2>Total Donated</h2>
-		    <p>$1,000,000</p>
-		  </div>
-	</div>
-
-	</div>
-
-
-
-	<div class="col-lg-4 col-md-4 col-12 p-4">
-
-	<div class="card-product">
-		  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-		  <div class="card-product-infos">
-		    <h2>Share</h2>
-		    <p>Facebook, Twitter, etc... (I will change this to a module!:)</p>
-		  </div>
-	</div>
-
-	</div>
-
-
-	</div>
-
-</div>
-
-
-
-
-
-
-
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-12 col-lg-8">
-		<div class="your-container">
-
-		<div class="content">
-      		<div class="cards">
-            <% @issues.each do |issue| %>
-             <li>
-            <% if issue.photo.attached? %>
-            <% background_url = cl_image_path issue.photo.key, width: 400, height: 500, crop: :fill %>
-            <% else %>
-            <% background_url = 'https://images.unsplash.com/photo-1585859537744-6e62df9b9a5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80' %>
-            <% end %>
-
-		       <div class="card" style="background-image:url('<%= background_url %>')">
-		          <%= link_to 'Donate Again', issue_path(issue) %>
-		        </div>
-
-          </li>
-
-					<% end %>
-                  </div>
-                  </div>
-
-             </div>
-              </div>
-
-
-
-
-
-
-
-
-
-			<div class="col-md-12 col-12 col-lg-4">
-			<div class="container">
-
-	      <img id="mapdashboard" src='https://raw.githubusercontent.com/lewagon/layouts-demo/gh-pages/images/mapbox.png'>
-			</div>
-			</div>
+		<div class="col-lg-4 col-md-4 col-12 p-4">
+			<div class="card-product">
+				<% if current_user.donations_sum > 10 && current_user.donations_sum < 50 %>
+					<i class="fa fa-trophy" style="font-size:48px;color:black"></i>
+					<% elsif current_user.donations_sum > 50 && current_user.donations_sum < 100 %>
+					<i class="fa fa-trophy" style="font-size:48px;color:gray"></i>
+					<% elsif current_user.donations_sum > 100 && current_user.donations_sum < 200 %>
+					<i class="fa fa-trophy" style="font-size:48px;color:brown"></i>
+					<% elsif current_user.donations_sum > 200 && current_user.donations_sum < 300 %>
+					<i class="fa fa-trophy" style="font-size:48px;color:red"></i>
+					<% elsif current_user.donations_sum > 300 && current_user.donations_sum < 400 %>
+					<i class="fa fa-trophy" style="font-size:48px;color:orange"></i>
+					<% elsif current_user.donations_sum > 400 %>
+					<i class="fa fa-trophy" style="font-size:48px;color:yellow"></i>
+				<% end %>
+				<div class="card-product-infos">
+					<% if current_user.donations_sum > 10 && current_user.donations_sum < 50 %>
+					<h2>Okay Human Being</h2>
+					<% elsif current_user.donations_sum > 50 && current_user.donations_sum < 100 %>
+					<h2>Descent Human Being</h2>
+					<% elsif current_user.donations_sum > 100 && current_user.donations_sum < 200 %>
+					<h2>Alright Human Being</h2>
+					<% elsif current_user.donations_sum > 200 && current_user.donations_sum < 300 %>
+					<h2>Sweet Human Being</h2>
+					<% elsif current_user.donations_sum > 300 && current_user.donations_sum < 400 %>
+					<h2>Great Human Being</h2>
+					<% elsif current_user.donations_sum > 400 %>
+					<h2>One of a Kind Human Being</h2>
+				<% end %>
+					<%= render 'shared/socialshare' %>
+					
+				</div>
 			</div>
 		</div>
+
+
+
+		<div class="col-lg-4 col-md-4 col-12 p-4">
+			<div class="card-product">
+
+
+
+<i class='fas fa-hand-holding-heart' style='font-size:48px;color:black'></i>
+				<div class="card-product-infos">
+					<h2>Total Donated</h2>
+					<p>$<%= humanized_money current_user.donations_sum %></p>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-12 col-lg-8">
+			<div class="your-container">
+				<h2>Past Donations</h2>
+				<div class="content">
+					<div class="cards">
+						<% @issues.each do |issue| %>
+						<li>
+							<% if issue.photo.attached? %>
+							<% background_url = cl_image_path issue.photo.key, width: 400, height: 500, crop: :fill %>
+							<% else %>
+							<% background_url = 'https://images.unsplash.com/photo-1585859537744-6e62df9b9a5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80' %>
+							<% end %>
+							<div class="card" style="background-image:url('<%= background_url %>')">
+								<%= link_to 'Donate Again', issue_path(issue) %>
+							</div>
+						</li>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12 col-12 col-lg-4">
+			<div class="container">
+				<img id="mapdashboard" src='https://raw.githubusercontent.com/lewagon/layouts-demo/gh-pages/images/mapbox.png'>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 

@@ -1,4 +1,27 @@
+
 <%= simple_form_for [@issue, @charity, @donation] do |f| %>
 <%= f.input :amount %>
 <%= f.submit %>
 <% end %>
+
+<!-- <!-- <!-- <div class="container">
+  <div class="row py-4"> -->
+    <!-- <div class="col">
+      <h1>One last step to make your world brigther.</h1>
+      <p>You are about to donate <strong><%= humanized_money_with_symbol @donation.amount %> to <strong><%= @donation.charity %></strong>.</strong></p>
+      <button id="pay" class="btn btn-primary">Pay</button>
+
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @order.checkout_session_id %>'
+          });
+        });
+      </script>
+    </div>
+  </div>
+</div> --> --> -->
+

@@ -4,6 +4,7 @@ class DashboardController < ApplicationController
 	  @username = email.first
 
 	  @issues = Issue.all
+	  @donations = current_user.donations
 
 	end
     

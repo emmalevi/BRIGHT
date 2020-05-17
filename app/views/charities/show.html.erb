@@ -27,7 +27,8 @@
               <p>Rating: <%= @charity.rating %></p>
             </div>
 
-            <%= link_to 'Donate now!', charity_donation_path, id:'issuecta' %>
+            <%= link_to 'Donate now!', new_issue_charity_donation_path(@issue, @charity), id:'issuecta' %>
+
           </div>
         </div>
        </div>

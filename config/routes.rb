@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'issues#map'
 
+  get 'bright', to: 'pages#home'
 
   #Issues
   resources :issues, only: [:index, :show] do

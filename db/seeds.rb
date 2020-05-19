@@ -107,6 +107,53 @@ issue6 = Issue.create!(
 issue6_photo = URI.open('https://images.unsplash.com/photo-1581059686229-de26e6ae5dc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80')
 issue6.photo.attach(io: issue6_photo, filename: 'issue6.jpg' , content_type: 'image/jpg')
 
+issue7 = Issue.create!(
+  name: 'Cholera'
+  issue_type: 'Pandemic'
+  description: 'The first cholera pandemic occurred in the Bengal region of India, near Calcutta starting in 1817 through 1824. The disease dispersed from India to Southeast Asia, the Middle East, Europe, and Eastern Africa. The movement of British Army and Navy ships and personnel is believed to have contributed to the range of the pandemic, since the ships carried people with the disease to the shores of the Indian Ocean, from Africa to Indonesia, and north to China and Japan.'
+  location: 'India'
+  origin: 'The primary symptoms of cholera are profuse diarrhea and vomiting of clear fluid'
+  death_count: '28000'
+  impacted_population: '130000'
+)
+issue7_photo = URI.open('https://disciplied.com/wp-content/uploads/2018/11/signos-de-c%C3%B3lera-s%C3%ADntomas-y-complicaciones.jpg')
+issue7.photo.attach(io: issue6_photo, filename: 'issue7.jpg', content_type: 'image/jpg')
+
+issue8 = Isssue.create!(
+  name: 'Zika virus'
+  issue_type: 'Pandemic'
+  description: 'As early as August 2014, physicians in northeastern Brazil began to investigate an outbreak of illness characterized by a flat pinkish rash, blooshoot eyes, fever, joint pain and headaches while symptoms resembled dengue fever and other potential causes. By March 2015, the illness spread to another three states of the country but the specific event that brought the virus to Brazil was uncertain until March 2016.'
+  location: 'Brazil'
+  origin: 'The virus spread mainly by the Yellow Fever, which is found throughout the tropical and subtropical Americas. The virus can be transmitted from an infected pregnant woman to her fetus.'
+  death_count: '18'
+  impacted_population: '711381'
+)
+issue8_photo = URI.open('https://www.cdc.gov/zika/images/AeAegypti-PHIL.jpg')
+issue8.photo.attach(io: issue8_photo, filename: 'issue8.jpg', content_type: 'image/jpg')
+
+issue9 = Issue.create(
+  name: 'Mexico Earthquake'
+  issue_type: 'Natural Disaster'
+  description: 'According to the National Seismological Service of Mexico, the epicenter was located 12km southeast of Axochiapan and 120 km from Mexico City. The earthquake was measured at a magnitude of 7.1, ocurring at 13:14:40 Central Daylight Time, at a depth of 51km. The United States Geological Survey placed the epicenter 5km. '
+  location: 'Mexico'
+  origin: 'The earthquake caused damage in the Mexican states of Puebla and Morelos.'
+  death_count: '370'
+  impacted_population: '6000'
+)
+issue9_photo = URI.open('https://ichef.bbci.co.uk/news/660/cpsprodpb/0362/production/_103466800_aa198273-4b52-455f-9157-36d678a9d3c8.jpg')
+issue9.photo.attach(io: issue9_photo, filename: 'issue9.jpg', content_type: 'image/jpg')
+
+issue10 = Issue.create!(
+  name: 'Ebola'
+  issue_type: 'Pandemic'
+  description: 'The disease was identified in 1976 in two simultaneous outbreaks: one in Nazara, town which is located in South Sudan and the other in Yambuku, DRC. From 1976 through 2013, the World Health Organization reported 2387 confirmed cases with 1590 overall fatalities. The largest outbreak to date was the Ebola virus epidemic in West Africa, which caused a large number of deaths in Guinea, Sierra Leone and Liberia.'
+  location: 'Democratic Republic of Congo'
+  origin: 'It spreads through direct contact with body fluids, such as blood from infected humans or other animals.'
+  death_count: '11323'
+  impacted_population: '28646'
+)
+issue10_photo = URI.open('https://cadenaser00.epimg.net/ser/imagenes/2014/08/08/sociedad/1407464009_740215_0000000000_noticia_normal.jpg')
+issue10.photo.attach(io: issue9_photo, filename: 'issue10.jpg', content_type: 'image/jpg')
 
 puts "Creating new charities"
 
@@ -248,7 +295,76 @@ charity18 = Charity.create!(
   rating: "3"
 )
 
+charity19 = Charity.create!(
+  name: 'Care USA'
+  description: 'Works arpund the globe to save lives, defeat poverty and achieve social justice; seeks a world of hope, tolerance and justice'
+  issues: [issue7]
+  total_donations: '213000000'
+  rating: "5"
+)
 
+charity20 = Charity.create!(
+  name: 'Direct Relief Foundation'
+  description: 'Taking care of improve the health and lives of people affected by poverty or emergency situations by mobilizing and providing essential medical resources needed for their care.'
+  issues: [issue7]
+  total_donations: '41000000'
+  rating: "4.5"
+)
 
+charity21 = Charity.create!(
+  name: 'Mercy Corps'
+  description: 'To alleviate suffering, poverty and oppression by helping people build secure, productive and just communities.'
+  issues: [issue7]
+  total_donations: '268000000'
+  rating: "3"
+)
+
+charity22 = Charity.create!(
+  name: 'Project C.U.R.E.'
+  description: 'Founded in 1987 to help bridge staggering health resource gaps in the developing world by matching medical supplies and modern equipment with facilities in need to empower doctors and nurses with the tools they need to treat disease.'
+  issues: [issue9]
+  total_donations: '78652976'
+  rating: "4"
+)
+
+charity23 = Charity.create!(
+  name: 'International Community Foundation'
+  description: 'Founded in 1990, seeks to increase charitable giving and volunteerism across U.S. borders to benefit overseas communities and non-profit organizations.'
+  issues: [issue9]
+  total_donations: '13756399'
+  rating: "3.5"
+)
+
+charity24 = Charity.create!(
+  name: 'Save the Children'
+  description: 'Since its founding over 100 years ago, we have changed the lives of over 1 billion children. In the United States and around the world, we work every day to give children a healthy start in life, the opportunity to learn and protection from harm.'
+  issues: [issue9]
+  total_donations: '494807970'
+  rating: "3"
+)
+
+charity25 = Charity.create!(
+  name: 'Africare'
+  description: 'The Africare team is supplying hundreds of community health workers with simplified leaflets on the Do and Donts of Ebola treatments.'
+  issues: [issue10]
+  total_donations: '100000'
+  rating: "2.5"
+)
+
+charity26 = Charity.create!(
+  name: 'BHP'
+  description: 'Mining company founded on September 1860, when its articles of association were approved by a meeting of shareholders in The Hague, Netherlands.'
+  issues: [issue10]
+  total_donations: '400000'
+  rating: "3.5"
+)
+
+charity27 = Charity.create!(
+  name: 'Cigna Foundation'
+  description: 'American worldwide health services organization based in Bloomfield, Connecticut. Its insurance subsidiaries are major providers of medical, dental, disability, life and accident insurance and related products and services, the majority of which are offered through employers and other groups.'
+  issues: [issue10]
+  total_donations: '50000'
+  rating: "2.5"
+)
 
 puts "Seeds completed!"

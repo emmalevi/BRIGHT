@@ -95,9 +95,16 @@
 			</div>
 		</div>
 		<div class="col-md-12 col-12 col-lg-4">
-			<div class="container">
-				<img id="mapdashboard" src='https://raw.githubusercontent.com/lewagon/layouts-demo/gh-pages/images/mapbox.png'>
-			</div>
+			<div class="your-container">
+			    <div
+			      id="map"
+			      style="width: 92%;
+			      height: 1000px;"
+			      data-markers="<%= @markers.to_json %>"
+			      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+			    >
+			    </div>
+  			</div>
 		</div>
 	</div>
 </div>

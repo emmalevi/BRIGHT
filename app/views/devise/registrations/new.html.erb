@@ -3,7 +3,7 @@
     <div class="devise-top">
 
 <h2 id="logo">BRIGHT</h2>
-<p> <strong> Sign up </strong></p>
+<div class="ecarter"></div>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -27,7 +27,7 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+Already have an account? <%= render "devise/shared/links" %>
 
     </div>
   </div>

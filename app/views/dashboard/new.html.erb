@@ -1,4 +1,5 @@
-<div class="dashboardcontainer">
+<div class="d-flex align-items-center" style="padding-top: 40px; padding-left: 40px;" >
+
 
 
 		<div id="image-avatar">
@@ -9,62 +10,75 @@
 	    <% end %>
 	    </div>
 
+<div>
+	<h5>Hi, <%= @username.capitalize %></h5>
 
-	<h2>Hi, <%= @username.capitalize %>, welcome to your Dashboard</h2>
+			<div class="d-flex align-items-center">
+			<div class="points-system" style="margin-right: 10px; margin-left: 0px;">
+			<i class='fas fa-hand-holding-heart' style='font-size:24px;color:white'></i>
+			</div>
+				<div class="points">
+					<h8>Donated: $<%= humanized_money current_user.donations_sum %></h8>
+					<br>
+					<h8>Points: <%= humanized_money current_user.donations_sum/100 %></h8>
+				
+				</div>
+				</div>
+			
+			
+		
+
+	</div>
+
 </div>
-<div class="container">
-	<div class="row no-gutters">
 
 
+
+<div class="ranking-container">	
 		<div class="col-lg-4 col-md-4 col-12 p-4">
-			<div class="card-product">
-				<% if current_user.donations_sum > 10 && current_user.donations_sum < 50 %>
-					<i class="fa fa-trophy" style="font-size:48px;color:black"></i>
+				<div class="d-flex align-items-center">
+					<div style="margin-right: 20px; margin-left: 40px;">
+					<% if current_user.donations_sum >= 0 && current_user.donations_sum < 50 %>
+					<i class="fa fa-trophy" style="font-size:48px;color:brown"></i>
 					<% elsif current_user.donations_sum > 50 && current_user.donations_sum < 100 %>
 					<i class="fa fa-trophy" style="font-size:48px;color:gray"></i>
 					<% elsif current_user.donations_sum > 100 && current_user.donations_sum < 200 %>
-					<i class="fa fa-trophy" style="font-size:48px;color:brown"></i>
+					<i class="fa fa-trophy" style="font-size:48px;color:blue"></i>
 					<% elsif current_user.donations_sum > 200 && current_user.donations_sum < 300 %>
 					<i class="fa fa-trophy" style="font-size:48px;color:red"></i>
 					<% elsif current_user.donations_sum > 300 && current_user.donations_sum < 400 %>
 					<i class="fa fa-trophy" style="font-size:48px;color:orange"></i>
 					<% elsif current_user.donations_sum > 400 %>
 					<i class="fa fa-trophy" style="font-size:48px;color:yellow"></i>
-				<% end %>
-				<div class="card-product-infos">
-					<% if current_user.donations_sum > 10 && current_user.donations_sum < 50 %>
-					<h2>Okay Human Being</h2>
+					<% end %>
+					</div>
+					<div>
+					<% if current_user.donations_sum >= 0 && current_user.donations_sum < 50 %>
+					<h4>Okay Human Being</h4>
 					<% elsif current_user.donations_sum > 50 && current_user.donations_sum < 100 %>
-					<h2>Descent Human Being</h2>
+					<h4>Descent Human Being</h4>
 					<% elsif current_user.donations_sum > 100 && current_user.donations_sum < 200 %>
-					<h2>Alright Human Being</h2>
+					<h4>Alright Human Being</h4>
 					<% elsif current_user.donations_sum > 200 && current_user.donations_sum < 300 %>
-					<h2>Sweet Human Being</h2>
+					<h4>Sweet Human Being</h4>
 					<% elsif current_user.donations_sum > 300 && current_user.donations_sum < 400 %>
-					<h2>Great Human Being</h2>
+					<h4>Great Human Being</h4>
 					<% elsif current_user.donations_sum > 400 %>
-					<h2>One of a Kind Human Being</h2>
-				<% end %>
-					<%= render 'shared/socialshare' %>
-
+					<h4>One of a Kind Human Being</h4>
+					<% end %>
+					</div>
 				</div>
-			</div>
-		</div>
-
-
-
-		<div class="col-lg-4 col-md-4 col-12 p-4">
-			<div class="card-product">
-
-
-
-<i class='fas fa-hand-holding-heart' style='font-size:48px;color:black'></i>
-				<div class="card-product-infos">
-					<h2>Total Donated</h2>
-					<p>$<%= humanized_money current_user.donations_sum %></p>
+				
+					<p class="text-center p-0 mt-1 mb-1"><strong>Spread</strong> the word around you:</p>
+				<div class="text-center p-0 social-links">
+				    <a href="#"><i class="fab fa-facebook-f"></i></a>
+				    <a href="#"><i class="fab fa-whatsapp"></i></a>
+				    <a href="#"><i class="fab fa-instagram"></i></i></a>
+				    <a href="#"><i class="fab fa-linkedin-in"></i></a>
 				</div>
-			</div>
+				</div>
 		</div>
+	
 
 	</div>
 </div>
@@ -75,7 +89,7 @@
 	<div class="row">
 		<div class="col-md-12 col-12 col-lg-8">
 			<div class="your-container">
-				<h2>Past Donations</h2>
+				<h4>Past Donations</h4>
 				<div class="content">
 					<div class="cards">
 						<% @donations.each do |d| %>
@@ -86,7 +100,7 @@
 							<% background_url = 'https://images.unsplash.com/photo-1585859537744-6e62df9b9a5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80' %>
 							<% end %>
 							<div class="card" style="background-image:url('<%= background_url %>')">
-								<%= link_to 'Donate Again', issue_path(d.issue) %>
+								<%= link_to d.issue.name, issue_path(d.issue) %>
 							</div>
 						</li>
 						<% end %>
@@ -99,7 +113,9 @@
 			    <div
 			      id="map"
 			      style="width: 92%;
-			      height: 1000px;"
+			      height: 500px;
+			      margin-bottom: 20px;
+			      padding-top: 20px;"
 			      data-markers="<%= @markers.to_json %>"
 			      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 			    >

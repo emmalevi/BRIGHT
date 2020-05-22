@@ -3,29 +3,29 @@
     <div id="resume" class="resume">
       <div class="section-title">
         <% if @charity.issues.any?  %>
-          <h2> <%= @charity.issues.first.name  %></h2>
-          <% else %>
-          <h2 id="logo">BRIGHT</h2>
+        <h2> <%= @charity.issues.first.name  %></h2>
+        <% else %>
+        <h2 id="logo">BRIGHT</h2>
         <% end %>
         <p><%= @charity.name %></p>
       </div>
 
-      <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="img-fluid my-3" alt="">
+      <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" id="img-show" alt="">
       <div class="row">
         <div class="col-lg-6">
-          <div class="resume-item pb-0">
+          <div class="resume-item pb-2">
             <h4>Charity Background</h4>
             <p><%= @charity.description %></p>
+          </div>
+          <div class="resume-item pb-2">
+            <h4>Numbers</h4>
+            <p>Total donations: <%= @charity.total_donations %></p>
+          </div>
 
-            <div class="resume-item">
-              <h4>Numbers</h4>
-              <p>Total donations: <%= @charity.total_donations %></p>
-            </div>
-
-            <div class="resume-item">
-              <h4>Ranking</h4>
-              <p>Rating: <%= @charity.rating %></p>
-            </div>
+          <div class="resume-item pb-2">
+            <h4>Ranking</h4>
+            <p>Rating: <%= @charity.rating %></p>
+          </div>
 
             <div class="resume-item">
               <h4>Donate Now</h4>

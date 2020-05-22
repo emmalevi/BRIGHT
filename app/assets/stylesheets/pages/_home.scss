@@ -1,1 +1,24 @@
-// Specific CSS for your home-page
+.homepage {
+height: 100vh;
+background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/World_map_with_points.svg/1280px-World_map_with_points.svg.png");
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+p {
+  color: #18d26e;
+}
+}
+
+#welcomelogo {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 600;
+  margin-top: 23vh;
+  font-size: 42px;
+}
+
+
+.typed-cursor {
+  color:black
+}

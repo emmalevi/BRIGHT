@@ -21,6 +21,7 @@
   height: auto;
   border-radius: 10px;
   margin-bottom: 35px;
+  padding: 11px;
 }
 
 
@@ -36,7 +37,7 @@
     }
 
     .resume .resume-item {
-      padding: 0 0 20px 20px;
+      padding: 0 0 20px 23px;
       margin-top: -2px;
       border-left: 2px solid rgba(255, 255, 255, 0.2);
       position: relative;
@@ -93,7 +94,7 @@
     text-align: center;
     background: rgba(204, 204, 204, 0.1);
     padding: 80px 20px;
-    transition: all ease-in-out 0.3s;
+    width: 100%
   }
 
   .services .icon-box .icon {

@@ -23,13 +23,16 @@
   text-align: right;
 }
 
-
+.imagenavbar {
+  padding:30px;
+}
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
 
 #logomap {
   font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 600;
   margin-left: 13px;
   margin-top: -3px;
   font-size: 15px;
@@ -79,6 +82,19 @@
   list-style: none;
 }
 
+.mobile-nav {
+  .imagenavbar {
+    padding: 50px;
+    margin-right: 20px;
+  }
+
+  #loginavbar{
+    font-size: 18px;
+    margin-left: 20px;
+    margin-top: 12px;
+    color: #18d26e
+  }
+}
 .mobile-nav a {
   display: block;
   position: relative;
@@ -86,8 +102,17 @@
   padding: 10px 20px;
   font-weight: 500;
   outline: none;
+  margin-left: 40px;
 }
 
+.navfooter {
+  padding-top:312px;
+
+h3 {
+  font-size:12px;
+  color:grey;
+}
+}
 .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
   color: #18d26e;
   text-decoration: none;
@@ -139,10 +164,10 @@
     border-radius: 6px;
     background: #3C3C3C;
     border: 0;
-    width: 107%;
-    margin-top: 37px;
-    margin-left: 18px;
-    font-size: 12px;
+    width: 93%;
+    margin-top: 57px;
+    margin-left: 32px;
+    font-size: 13px;
     line-height: 7.5;
   }
 

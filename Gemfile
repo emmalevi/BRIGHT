@@ -19,6 +19,7 @@ gem 'devise'
 gem 'geocoder'
 gem 'cloudinary', '~> 1.12.0'
 
+gem 'stripe'
 gem 'stripe_event'
 gem 'money-rails'
 

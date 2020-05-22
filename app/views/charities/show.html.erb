@@ -27,13 +27,26 @@
               <p>Rating: <%= @charity.rating %></p>
             </div>
 
-
-            <%= link_to 'Donate now!', new_issue_charity_donation_path(@issue, @charity), id:'issuecta' %>
-
-
+            <div class="resume-item">
+              <h4>Donate Now</h4>
+              <%= form_tag [@issue, @charity, Donation.new] do %>
+                <div class="row">
+                  <div class="col-4">
+                    <%= submit_tag '$5', class: 'btn btn-success m-1' %>
+                    <%= submit_tag '$10', class: 'btn btn-success m-1' %>
+                    <%= submit_tag '$20', class: 'btn btn-success m-1' %>
+                    <%= submit_tag '$50', class: 'btn btn-success m-1' %>
+                    <%= submit_tag '$100', class: 'btn btn-success m-1' %>
+                    <%= submit_tag '$200', class: 'btn btn-success m-1' %>
+                    <%= submit_tag '$200', class: 'btn btn-success m-1' %>
+                    <%= number_field_tag 'Other amount', nil, min: 1, class: 'btn btn-success m-1' %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
-       </div>
+      </div>
     </div>
   </div>
 </div>

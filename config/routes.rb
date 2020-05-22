@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   resources :issues, only: [:index, :show] do
   #Charities
     resources :charities, only: :show do
-      resources :donations, only: [:new, :create]
+      resources :donations, only: [:show, :create] do
+        resources :payments, only: :new
+      end
     end
   end
 
-  get "donations/:id", to: "donations#show", as: :donation
   get 'dashboard', to: 'dashboard#new'
-
 end

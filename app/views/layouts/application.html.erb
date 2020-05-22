@@ -15,7 +15,7 @@
 
   </head>
     <body class="bg-black">
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' unless current_page?('/bright') %>
     <%= render 'shared/flashes' %>
     <%= yield %>
 

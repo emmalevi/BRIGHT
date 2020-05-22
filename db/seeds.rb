@@ -155,6 +155,31 @@ issue10 = Issue.create!(
 issue10_photo = URI.open('https://cadenaser00.epimg.net/ser/imagenes/2014/08/08/sociedad/1407464009_740215_0000000000_noticia_normal.jpg')
 issue10.photo.attach(io: issue9_photo, filename: 'issue10.jpg', content_type: 'image/jpg')
 
+issue11 = Issue.create!(
+  name: 'Japan Tsunami'
+  issue_type: 'Natural Disaster'
+  description: 'An upthrust of 6 to 8 meters along 180 km wide seabed at 60 km offshore from the east coast of Tohoku resulted in a major tsunami that brought destruction along the Pacific coastline of Japanese northern islands. Thousands of live were lost and entire towns were devastated.'
+  location: 'Japan'
+  origin: 'The tsunami swept the Japanese mainland and killed over ten thousand people, mainly through drowing, though blunt trauma also caused many deaths.'
+  death_count: '15899'
+  impacted_population: '6157'
+)
+issue11_photo = URI.open('https://cdn.theatlantic.com/thumbor/1YvKw1Pa6UCKYkNqv8nY4lGXjB0=/1200x797/media/img/photo/2016/03/5-years-since-the-2011-great-east-j/q01_RTR2JTXO/original.jpg')
+issue11.photo.attach(io: issue11_photo, filename: 'issue11.jpg', content_type: 'image/jpg')
+
+issue12 = Issue.create!(
+  name: 'Malaria'
+  issue_type: 'Pandemic'
+  description: 'Malaria parasites belong to the genus Plasmodium, which in majority is caused in humans. Among those infected, falciparum is most common species identified followed by vivax. Althrough falciparum traditionally accounts for the majority of deaths, recent evidence suggests that vivax malaria is associated with potentially life-threatening conditions about as often as with diagnosis of falciparum infection.'
+  location: 'Sub-Saharan Africa', 'Asia', 'Latin America'
+  origin: 'It causes symptoms that typically include fever, tiredness, vomiting and headaches.'
+  death_count: '405000'
+  impacted_population: '228000000'
+)
+issue12_photo = URI.open('https://www.healtheuropa.eu/wp-content/uploads/2018/12/nopparit-696x392.jpg')
+issue12.photo.attach(io: issue12_photo, filename: 'issue12.jpg', content_type: 'image/jpg')
+
+
 puts "Creating new charities"
 
 charity1 = Charity.create!(
@@ -365,6 +390,54 @@ charity27 = Charity.create!(
   issues: [issue10]
   total_donations: '50000'
   rating: "2.5"
+)
+
+charity28 = Charity.create!(
+  name: 'ShelterBox'
+  description: 'International disaster relief charity established in 2000 in Helston, United Kingdom that provides emergency shelter and other aid items to families around the world who have lost their homes to disaster or conflict.'
+  issues: [issue11]
+  total_donations: '50000'
+  rating: "2"
+)
+
+chairty29 = Charity.create!(
+  name: 'Caritas Internationals'
+  description: 'Catholic relief, development and social service organizations operating over 200 countries and territories worldwide.'
+  issues: [issue11]
+  total_donations: '3057370'
+  rating: "3.5"
+)
+
+charity30 = Charity.create!(
+  name: 'Something Awful'
+  description: 'Comedy website housing a variety of content, including blog entries, forums, feature articles, digitally edited pictures and humorous media reviews.'
+  issues: [issue11]
+  total_donations: '71750'
+  rating: "2.5"
+)
+
+charity31 = Charity.create!(
+  name: 'Freedom From Hunger`s'
+  description: 'They give out micro-loans, one of the best way to fight poverty. This empowers women to buy their own nets, while providing some health insurance and savings.'
+  issues: [issue12]
+  total_donations: '3595872'
+  rating: "3"
+)
+
+charity32 = Charity.create!(
+  name: 'Against Malaria Foundation'
+  description: 'British-based charity that provides long-lasting insecticidal nets to populations at high risk of malaria, primarily in Africa. '
+  issues: [issue12]
+  total_donations: '117400000'
+  rating: "4"
+)
+
+charity33 = Charity.create!(
+  name: 'World Vision'
+  description: 'Christian humanitarian organization dedicated to working with children, families and their communities worldwide to reach their full potential by tackling the causes of poverty and injustice. '
+  issues: [issues12]
+  total_donations: '716808791'
+  rating: "3.5"
 )
 
 puts "Seeds completed!"

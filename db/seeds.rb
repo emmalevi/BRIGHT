@@ -15,7 +15,6 @@ Issue.destroy_all
 User.destroy_all
 Charity.destroy_all
 
-
 user1 = User.create(email: "bob@gmail.com", password: "012345")
 user2 = User.create(email: "jake@gmail.com", password:"abc123")
 user3 = User.create(email: "ryan@gmail.com", password: "def456")
@@ -32,10 +31,8 @@ issue1 = Issue.create!(
   impacted_population: 773899
 )
 
-
 issue1_photo = URI.open('https://blog.scopus.com/sites/default/files/coronavirus-image-iStock-628925532-full-width-wide_0.jpg')
 issue1.photo.attach(io: issue1_photo, filename: 'issue1.jpg' , content_type: 'image/jpg')
-
 
 issue2 = Issue.create!(
   name: 'AIDS',
@@ -47,11 +44,8 @@ issue2 = Issue.create!(
   impacted_population: 7573891
 )
 
-
-
 issue2_photo = URI.open('https://www.who.int/images/default-source/big-stories/ten-threats-to-global-health/hiv-ru.jpg?sfvrsn=7697577e_14')
 issue2.photo.attach(io: issue2_photo, filename: 'issue2.jpg' , content_type: 'image/jpg')
-
 
 issue3 = Issue.create!(
   name: 'Hiroshima Radiation',
@@ -61,25 +55,10 @@ issue3 = Issue.create!(
   origin: 'It was a result of exposure to the blast, heat, or due to radiation',
   death_count: '600404',
   impacted_population: 903589
-
 )
 
 issue3_photo = URI.open('https://images.unsplash.com/photo-1574088768469-53d8a7839bf1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
 issue3.photo.attach(io: issue3_photo, filename: 'issue3.jpg' , content_type: 'image/jpg')
-
-issue5 = Issue.create!(
- name: 'Haiti Earthquake',
- issue_type: 'Natural Disaster',
- description: 'The magnitude 7.0 earthquake ocurred in land on 12 January 2010 at 16:53 approximately 25 km from Port-au-Prince at a depth of 13 km. There is no evidence of surface rupture and based on seismological and geological information data it is thought that the earthquake did not involve significant lateral slip on the main fault. Strong shaking associated with intensity IX on the Modified Mercalli scale was recorded in Port-au-Prince and its suburbs.',
- location: 'Haiti',
- origin: 'The earthquake struck in the most populated area of the location',
- death_count: '316000',
- impacted_population: 670200
-)
-
-issue5_photo = URI.open('https://www.dw.com/image/52148088_303.jpg')
-issue5.photo.attach(io: issue5_photo, filename: 'issue5.jpg' , content_type: 'image/jpg')
-
 
 issue4 = Issue.create!(
   name: 'Children Hunger',
@@ -94,6 +73,18 @@ issue4 = Issue.create!(
 issue4_photo = URI.open('https://images.unsplash.com/photo-1507427100689-2bf8574e32d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60g')
 issue4.photo.attach(io: issue4_photo, filename: 'issue4.jpg' , content_type: 'image/jpg')
 
+issue5 = Issue.create!(
+ name: 'Haiti Earthquake',
+ issue_type: 'Natural Disaster',
+ description: 'The magnitude 7.0 earthquake ocurred in land on 12 January 2010 at 16:53 approximately 25 km from Port-au-Prince at a depth of 13 km. There is no evidence of surface rupture and based on seismological and geological information data it is thought that the earthquake did not involve significant lateral slip on the main fault. Strong shaking associated with intensity IX on the Modified Mercalli scale was recorded in Port-au-Prince and its suburbs.',
+ location: 'Haiti',
+ origin: 'The earthquake struck in the most populated area of the location',
+ death_count: '316000',
+ impacted_population: 670200
+)
+
+issue5_photo = URI.open('https://www.dw.com/image/52148088_303.jpg')
+issue5.photo.attach(io: issue5_photo, filename: 'issue5.jpg' , content_type: 'image/jpg')
 
 issue6 = Issue.create!(
   name: 'Indian Ocean Earthquake',
@@ -104,6 +95,7 @@ issue6 = Issue.create!(
   death_count: '227898',
   impacted_population: 355437
 )
+
 issue6_photo = URI.open('https://images.unsplash.com/photo-1581059686229-de26e6ae5dc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80')
 issue6.photo.attach(io: issue6_photo, filename: 'issue6.jpg' , content_type: 'image/jpg')
 
@@ -116,10 +108,10 @@ issue7 = Issue.create!(
   death_count: '28000',
   impacted_population: '130000'
 )
-issue7_photo = URI.open('https://disciplied.com/wp-content/uploads/2018/11/signos-de-c%C3%B3lera-s%C3%ADntomas-y-complicaciones.jpg')
-issue7.photo.attach(io: issue6_photo, filename: 'issue7.jpg', content_type: 'image/jpg')
+issue7_photo = URI.open("https://media.ifrc.org/ifrc/wp-content/uploads/sites/5/2018/03/p-BEN0007-small.jpg")
+issue7.photo.attach(io: issue7_photo, filename: 'issue7.jpg', content_type: 'image/jpg')
 
-issue8 = Isssue.create!(
+issue8 = Issue.create!(
   name: 'Zika virus',
   issue_type: 'Pandemic',
   description: 'As early as August 2014, physicians in northeastern Brazil began to investigate an outbreak of illness characterized by a flat pinkish rash, blooshoot eyes, fever, joint pain and headaches while symptoms resembled dengue fever and other potential causes. By March 2015, the illness spread to another three states of the country but the specific event that brought the virus to Brazil was uncertain until March 2016.',
@@ -153,8 +145,31 @@ issue10 = Issue.create!(
   impacted_population: '28646'
 )
 issue10_photo = URI.open('https://cadenaser00.epimg.net/ser/imagenes/2014/08/08/sociedad/1407464009_740215_0000000000_noticia_normal.jpg')
-issue10.photo.attach(io: issue9_photo, filename: 'issue10.jpg', content_type: 'image/jpg')
+issue10.photo.attach(io: issue10_photo, filename: 'issue10.jpg', content_type: 'image/jpg')
 
+issue11 = Issue.create!(
+  name: 'Japan Tsunami',
+  issue_type: 'Natural Disaster',
+  description: 'An upthrust of 6 to 8 meters along 180 km wide seabed at 60 km offshore from the east coast of Tohoku resulted in a major tsunami that brought destruction along the Pacific coastline of Japanese northern islands. Thousands of live were lost and entire towns were devastated.',
+  location: 'Japan',
+  origin: 'The tsunami swept the Japanese mainland and killed over ten thousand people, mainly through drowing, though blunt trauma also caused many deaths.',
+  death_count: '15899',
+  impacted_population: '6157'
+)
+issue11_photo = URI.open('https://cdn.theatlantic.com/thumbor/1YvKw1Pa6UCKYkNqv8nY4lGXjB0=/1200x797/media/img/photo/2016/03/5-years-since-the-2011-great-east-j/q01_RTR2JTXO/original.jpg')
+issue11.photo.attach(io: issue11_photo, filename: 'issue11.jpg', content_type: 'image/jpg')
+
+issue12 = Issue.create!(
+  name: 'Malaria',
+  issue_type: 'Pandemic',
+  description: 'Malaria parasites belong to the genus Plasmodium, which in majority is caused in humans. Among those infected, falciparum is most common species identified followed by vivax. Althrough falciparum traditionally accounts for the majority of deaths, recent evidence suggests that vivax malaria is associated with potentially life-threatening conditions about as often as with diagnosis of falciparum infection.',
+  location: 'Sub-Saharan Africa',
+  origin: 'It causes symptoms that typically include fever, tiredness, vomiting and headaches.',
+  death_count: '405000',
+  impacted_population: '228000000'
+)
+issue12_photo = URI.open('https://www.healtheuropa.eu/wp-content/uploads/2018/12/nopparit-696x392.jpg')
+issue12.photo.attach(io: issue12_photo, filename: 'issue12.jpg', content_type: 'image/jpg')
 puts "Creating new charities"
 
 charity1 = Charity.create!(
@@ -181,7 +196,6 @@ charity3 = Charity.create!(
   rating: "3"
 )
 
-
 charity4 = Charity.create!(
   name: 'Worldwide CARE',
   description: 'Taking care of human disasters.',
@@ -189,7 +203,6 @@ charity4 = Charity.create!(
   total_donations: 185000000,
   rating: "4"
 )
-
 
 charity6 = Charity.create!(
  name: 'Radiation Effects Research Foundation',
@@ -365,6 +378,54 @@ charity27 = Charity.create!(
   issues: [issue10],
   total_donations: '50000',
   rating: "2.5"
+)
+
+charity28 = Charity.create!(
+  name: 'ShelterBox',
+  description: 'International disaster relief charity established in 2000 in Helston, United Kingdom that provides emergency shelter and other aid items to families around the world who have lost their homes to disaster or conflict.',
+  issues: [issue11],
+  total_donations: '50000',
+  rating: "2"
+)
+
+charity29 = Charity.create!(
+  name: 'Caritas Internationals',
+  description: 'Catholic relief, development and social service organizations operating over 200 countries and territories worldwide.',
+  issues: [issue11],
+  total_donations: '3057370',
+  rating: "3.5"
+)
+
+charity30 = Charity.create!(
+  name: 'Something Awful',
+  description: 'Comedy website housing a variety of content, including blog entries, forums, feature articles, digitally edited pictures and humorous media reviews.',
+  issues: [issue11],
+  total_donations: '71750',
+  rating: "2.5"
+)
+
+charity31 = Charity.create!(
+  name: 'Freedom From Hunger`s',
+  description: 'They give out micro-loans, one of the best way to fight poverty. This empowers women to buy their own nets, while providing some health insurance and savings.',
+  issues: [issue12],
+  total_donations: '3595872',
+  rating: "3"
+)
+
+charity32 = Charity.create!(
+  name: 'Against Malaria Foundation',
+  description: 'British-based charity that provides long-lasting insecticidal nets to populations at high risk of malaria, primarily in Africa.',
+  issues: [issue12],
+  total_donations: '117400000',
+  rating: "4"
+)
+
+charity33 = Charity.create!(
+  name: 'World Vision',
+  description: 'Christian humanitarian organization dedicated to working with children, families and their communities worldwide to reach their full potential by tackling the causes of poverty and injustice.',
+  issues: [issue12],
+  total_donations: '716808791',
+  rating: "3.5"
 )
 
 puts "Seeds completed!"

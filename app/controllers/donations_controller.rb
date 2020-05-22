@@ -20,7 +20,7 @@ class DonationsController < ApplicationController
 
   	if @donation.save 
 
-  		redirect_to root_path 
+  		redirect_to dashboard_path 
   	else 
   		render :new
   	end

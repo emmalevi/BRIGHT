@@ -63,8 +63,6 @@ ActiveRecord::Schema.define(version: 2020_05_22_061619) do
     t.integer "amount_cents", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price_cents", default: 0, null: false
-    t.string "price_currency", default: "USD", null: false
     t.bigint "issue_id"
     t.string "state"
     t.index ["charity_id"], name: "index_donations_on_charity_id"

@@ -2,7 +2,13 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { initDonateAmounts } from '../plugins/init_donate_amounts';
+
 initMapbox();
+
+document.addEventListener('DOMContentLoaded', () => {
+  initDonateAmounts()
+})
 
 !(function($) {
   "use strict";

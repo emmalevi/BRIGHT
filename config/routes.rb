@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'issues#map'
+  root to: 'pages#home'
 
-  get 'bright', to: 'pages#home'
+  get 'map', to: 'issues#map', as: :map 
 
   #Issues
   resources :issues, only: [:index, :show] do

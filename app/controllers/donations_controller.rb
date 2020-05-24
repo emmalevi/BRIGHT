@@ -14,14 +14,15 @@ class DonationsController < ApplicationController
   def create
   	issue = Issue.find(params[:issue_id])
     charity = Charity.find(params[:charity_id])
-    amount = params[:commit].gsub('$', "").to_i * 100
+    amount = params[:amount].to_i * 100
+    amount = [amount, 1].max
     donation  = Donation.new(charity: charity, issue: issue, amount_cents: amount, state: 'pending', user: current_user)
 
     if donation.save
       session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
         line_items: [{
-          name: "#{charity.name}_#{params[:commit]}",
+          name: "#{charity.name}_#{params[:amount]}",
           amount: donation.amount_cents,
           currency: 'usd',
           quantity: 1

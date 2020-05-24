@@ -17,7 +17,8 @@ class IssuesController < ApplicationController
       {
         infoWindow: render_to_string(partial: "info_window", locals: { issue: issue }),
         lat: issue.latitude,
-        lng: issue.longitude
+        lng: issue.longitude,
+        image_url: helpers.asset_url("danger.svg"),
       }
     end
   end

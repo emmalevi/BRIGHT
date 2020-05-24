@@ -48,7 +48,7 @@
 					<i class="fa fa-trophy" style="font-size:48px;color:red"></i>
 					<% elsif current_user.donations_sum > 300 && current_user.donations_sum < 400 %>
 					<i class="fa fa-trophy" style="font-size:48px;color:orange"></i>
-					<% elsif current_user.donations_sum > 400 %>
+					<% elsif current_user.donations_sum >= 400 %>
 					<i class="fa fa-trophy" style="font-size:48px;color:yellow"></i>
 					<% end %>
 					</div>
@@ -63,7 +63,7 @@
 					<h4>Sweet Human Being</h4>
 					<% elsif current_user.donations_sum > 300 && current_user.donations_sum < 400 %>
 					<h4>Great Human Being</h4>
-					<% elsif current_user.donations_sum > 400 %>
+					<% elsif current_user.donations_sum >= 400 %>
 					<h4>One of a Kind Human Being</h4>
 					<% end %>
 					</div>

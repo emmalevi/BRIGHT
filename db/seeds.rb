@@ -31,7 +31,7 @@ issue1 = Issue.create!(
   impacted_population: 773899
 )
 
-issue1_photo = URI.open('https://blog.scopus.com/sites/default/files/coronavirus-image-iStock-628925532-full-width-wide_0.jpg')
+issue1_photo = URI.open('https://cdn.images.express.co.uk/img/dynamic/151/590x/Coronavirus-news-WHO-disease-COVOD19-research-coronavirus-cure-update-1249874.jpg?r=1583169163690')
 issue1.photo.attach(io: issue1_photo, filename: 'issue1.jpg' , content_type: 'image/jpg')
 
 issue2 = Issue.create!(
@@ -120,7 +120,7 @@ issue8 = Issue.create!(
   death_count: '18',
   impacted_population: '711381'
 )
-issue8_photo = URI.open('https://www.cdc.gov/zika/images/AeAegypti-PHIL.jpg')
+issue8_photo = URI.open('https://static01.nyt.com/images/2016/01/16/science/16ZIKASUB2/16ZIKASUB2-superJumbo.jpg')
 issue8.photo.attach(io: issue8_photo, filename: 'issue8.jpg', content_type: 'image/jpg')
 
 issue9 = Issue.create(
@@ -132,7 +132,7 @@ issue9 = Issue.create(
   death_count: '370',
   impacted_population: '6000'
 )
-issue9_photo = URI.open('https://ichef.bbci.co.uk/news/660/cpsprodpb/0362/production/_103466800_aa198273-4b52-455f-9157-36d678a9d3c8.jpg')
+issue9_photo = URI.open('https://cdn.cnn.com/cnnnext/dam/assets/160417112638-02-ecuador-quake-0417-super-169.jpg')
 issue9.photo.attach(io: issue9_photo, filename: 'issue9.jpg', content_type: 'image/jpg')
 
 issue10 = Issue.create!(
@@ -168,7 +168,7 @@ issue12 = Issue.create!(
   death_count: '405000',
   impacted_population: '228000000'
 )
-issue12_photo = URI.open('https://www.healtheuropa.eu/wp-content/uploads/2018/12/nopparit-696x392.jpg')
+issue12_photo = URI.open('https://cusointernational.org/wp-content/uploads/2018/12/Asosa__286.jpg')
 issue12.photo.attach(io: issue12_photo, filename: 'issue12.jpg', content_type: 'image/jpg')
 puts "Creating new charities"
 

@@ -18,7 +18,7 @@ class DashboardController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { issue: donation.issue }),
         lat: donation.issue.latitude,
         lng: donation.issue.longitude,
-        image_url: helpers.asset_url("danger.svg"),
+        image_url: helpers.asset_url("heart.svg"),
       }
     end
 	end

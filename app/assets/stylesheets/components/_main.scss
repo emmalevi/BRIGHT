@@ -328,6 +328,19 @@ section .container {
 padding:40px;
 }
 
+#donatebtn {
+     cursor: pointer;
+    display: inline-block;
+    padding: 14px 50px 14px 50px;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    background: #18d26e;
+    border-radius: 8px;
+    margin-top: 25px;
+    color:white;
+ }
 #maincta {
     cursor: pointer;
     display: inline-block;
@@ -343,16 +356,4 @@ padding:40px;
     margin: 10px;
   }
 
-  #donatebtn {
-     cursor: pointer;
-    display: inline-block;
-    padding: 14px 50px 14px 50px;
-    font-size: 17px;
-    font-weight: 600;
-    line-height: 1;
-    text-transform: uppercase;
-    background: #18d26e;
-    border-radius: 8px;
-    margin-top: 25px;
-  }
 

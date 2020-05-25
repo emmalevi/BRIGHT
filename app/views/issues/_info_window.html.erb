@@ -1,5 +1,7 @@
 <div class="popupdiv">
 <%= link_to issue.name, issue_path(issue), id: 'popname' %> <br>
 <%= link_to issue.issue_type, issue_path(issue), id: 'poptype' %> <br>
+<p>Death count: <%= issue.death_count %> <i class="fas fa-cross"></i> </p>
 <%= link_to "Learn more", issue_path(issue), id: "popupbtn" %>
+
 </div>

@@ -1,124 +1,116 @@
 <h2 id="logodashboard">BRIGHT</h2>
 <div class="d-flex align-items-center" style="padding-top: 30px; padding-left: 20px;" >
 
+  <div id="image-avatar">
+    <% if current_user && current_user.avatar.attached? %>
+    <%= cl_image_tag(current_user.avatar.key, class: "img-circle", width: "100px") %>
+    <% else %>
+    <%= image_tag "https://cdn3.iconfinder.com/data/icons/essential-rounded/64/Rounded-31-512.png", class: "img-circle", width: "100px"%>
+    <% end %>
+  </div>
 
+  <div>
+   <h3 style="color: #18d26e"><strong><%= @username.capitalize %></strong></h3>
 
-		<div id="image-avatar">
-		<% if current_user && current_user.avatar.attached? %>
-	        <%= cl_image_tag(current_user.avatar.key, class: "img-circle", width: "100px") %>
-	    <% else %>
-	        <%= image_tag "https://cdn3.iconfinder.com/data/icons/essential-rounded/64/Rounded-31-512.png", class: "img-circle", width: "100px"%>
-	    <% end %>
-	    </div>
+   <!-- <div class="d-flex align-items-center"> -->
+     <div class="points-system" style="margin-right: 10px; margin-left: 0px;">
+       <i class="fas fa-medal" style="color: #edb953"></i> <h8 style= "font-size: 14px;">
+        Total points: <%= humanized_money current_user.donations_sum/100 %>
 
-<div>
-	<h3><strong><%= @username.capitalize %></strong></h3>
-
-			<!-- <div class="d-flex align-items-center"> -->
-			<div class="points-system" style="margin-right: 10px; margin-left: 0px;">
-			<i class="fas fa-medal" style="color: #edb953"></i> <h8 style= "font-size: 14px; color: #18d26e">
-      Total points: <%= humanized_money current_user.donations_sum/100 %>
-        <% if current_user.donations_sum >= 0 && current_user.donations_sum < 50 %>
-            <i class="fa fa-trophy" style="font-size:14px;color:brown"></i>
-            <% elsif current_user.donations_sum > 50 && current_user.donations_sum < 100 %>
-            <i class="fa fa-trophy" style="font-size:14px;color:gray"></i>
-            <% elsif current_user.donations_sum > 100 && current_user.donations_sum < 200 %>
-            <i class="fa fa-trophy" style="font-size:14px;color:blue"></i>
-            <% elsif current_user.donations_sum > 200 && current_user.donations_sum < 300 %>
-            <i class="fa fa-trophy" style="font-size:14px;color:red"></i>
-            <% elsif current_user.donations_sum > 300 && current_user.donations_sum < 400 %>
-            <i class="fa fa-trophy" style="font-size:14px;color:orange"></i>
-          <% elsif current_user.donations_sum > 400 %>
-          <i class="fa fa-trophy" style="font-size:14px;color:yellow"></i>
-          <% end %>
-          </div>
-          <div>
+        <div>
           <% if current_user.donations_sum >= 0 && current_user.donations_sum < 50 %>
-          Okay Human Being
+          <i class="fa fa-trophy" style="font-size:14px;color:brown"> </i>
           <% elsif current_user.donations_sum > 50 && current_user.donations_sum < 100 %>
-          Descent Human Being
+          <i class="fa fa-trophy" style="font-size:14px;color:gray"> </i>
           <% elsif current_user.donations_sum > 100 && current_user.donations_sum < 200 %>
-          Alright Human Being
+          <i class="fa fa-trophy" style="font-size:14px;color:blue"> </i>
           <% elsif current_user.donations_sum > 200 && current_user.donations_sum < 300 %>
-          Sweet Human Being
+          <i class="fa fa-trophy" style="font-size:14px;color:red"> </i>
           <% elsif current_user.donations_sum > 300 && current_user.donations_sum < 400 %>
-          Great Human Being
+          <i class="fa fa-trophy" style="font-size:14px;color:orange"> </i>
           <% elsif current_user.donations_sum > 400 %>
-          One of a Kind Human Being
+          <i class="fa fa-trophy" style="font-size:14px;color:yellow"> </i>
           <% end %>
-      </h8>
-				</div>
-	</div>
-  </div>
+          <% if current_user.donations_sum >= 0 && current_user.donations_sum < 50 %>
+          <strong>Okay Human Being</strong>
+          <% elsif current_user.donations_sum > 50 && current_user.donations_sum < 100 %>
+          <strong>Descent Human Being</strong>
+          <% elsif current_user.donations_sum > 100 && current_user.donations_sum < 200 %>
+          <strong>Alright Human Being</strong>
+          <% elsif current_user.donations_sum > 200 && current_user.donations_sum < 300 %>
+          <strong>Sweet Human Being</strong>
+          <% elsif current_user.donations_sum > 300 && current_user.donations_sum < 400 %>
+          <strong>Great Human Being</strong>
+          <% elsif current_user.donations_sum > 400 %>
+          <strong>One of a Kind Human Being</strong>
+          <% end %>
+        </div>
 
-  <div class="ecarter"></div>
 
-<div class="container">
-        <h5 style= "margin-left: 10px"><strong>History of donations</strong></h5>
-        <div class="issue-show">
-  <div class="container ml-4">
-    <div id="resume" class="resume">
-      <div class="section-title mb-3">
-        <h2>Total Donated: <strong>$<%= humanized_money current_user.donations_sum %></h2>
       </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h5 style= "margin-left: 15px; margin-top: 45px"><strong>History of donations</strong></h5>
+    <div class="issue-show">
+      <div class="container ml-4">
+        <div class="section-title">
+          <h2 style= "margin-top:20px">Total Donated: <strong>$<%= humanized_money current_user.donations_sum %></h2>
+          </div>
+        </div>
+      </div>
+      <div class="grey-container" id="map"
+      style="
+      width: 365px;
+      height: 380px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      padding: 15px;
+      margin-top: 330px;
+      padding:13px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      >
+    </div>
   </div>
 </div>
-      <div class="grey-container" id="map"
-            style="
-    width: 335px;
-    height: 380px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    padding: 15px;
-    margin-top: 342px;
-    padding:13px;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-          >
 </div>
-    <div class="ecarter"></div>
-        <div class="ecarter"></div>
-            <div class="ecarter"></div>
 
-                <div class="ecarter"></div>
-</div>
-</div>
-</div>
-<div class="ecarter"></div>
 
-        <div class="issue-show">
+<div class="issue-show" style= "padding-top:400px">
   <div class="container ml-4">
     <div id="resume" class="resume">
-      <!-- <div class="section-title mb-3">
-        <h2>Total Donated: <strong>$<%= humanized_money current_user.donations_sum %></h2>
-      </div> -->
 
-      <div class="row">
-        <div class="col-lg-6">
- <% @donations.each do |d| %>
-          <div class="resume-item">
+        <div class="row">
+          <div class="col-lg-6" style="margin-left:15px">
+           <% @donations.each do |d| %>
+           <div class="resume-item">
             <h5><%= link_to d.issue.name, issue_path(d.issue) %></h5>
             <ul style= "font-size: 14px">
-              <li>Amount: $<%= humanized_money current_user.donations %> </li>
-              <li>Earned points: <%= humanized_money current_user.donations %></li>
+              <li>Amount: <%= d.amount_cents/100 %> <%= d.price_currency %> </li>
+              <li>Earned points: <%= d.amount_cents/1000 %></li>
             </ul>
           </div>
-            <% end %>
-            </div>
-	</div>
+          <% end %>
+          </div>
 
-  <div class="ecarter"></div>
-  <p class="text-center p-0 mt-1 mb-1"><strong>Spread</strong> the word around you:</p>
-        <div class="text-center p-0 social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
-         </div>
-             <div class="ecarter"></div>
+      </div>
+    </div>
+  </div>
 
-
+<div style="padding-top: 30px"></div>
+      <p class="text-center p-0 mt-1 mb-3"><strong>Spread</strong> the word around you:</p>
+      <div class="text-center p-0 social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div style="padding-top: 30px"></div>
 
 
 

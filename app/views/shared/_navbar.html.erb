@@ -1,20 +1,34 @@
 <nav class="nav-menu d-none d-lg-block">
 
-  <div class= "imagenavbar d-flex">
-      <% if current_user && current_user.avatar.attached? %>
-        <%= cl_image_tag(current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }) %>
-      <% else %>
-        <%= image_tag "https://cdn3.iconfinder.com/data/icons/essential-rounded/64/Rounded-31-512.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" } %>
-      <% end %>
-      <% if user_signed_in? %>
-     <h4 id="loginavbar"><strong> <%= current_user.username.capitalize %> </strong></h4>
+
+<!-- dashboard code -->
+<div class="d-flex align-items-center" style="padding:20px" >
+
+  <div id="image-avatar">
+    <% if current_user && current_user.avatar.attached? %>
+    <%= cl_image_tag(current_user.avatar.key, class: "img-circle", width: 80, height: 80, crop: :fill, gravity: :auto) %>
+    <% else %>
+    <%= image_tag "https://cdn3.iconfinder.com/data/icons/essential-rounded/64/Rounded-31-512.png", class: "img-circle", width: 70, height: 70, crop: :fill, gravity: :auto %>
+    <% end %>
+  </div>
+
+  <div>
+    <% if user_signed_in? %>
+   <h4 style= "margin-bottom:4px" id="loginavbar"><strong> <%= current_user.username.capitalize %> </strong></h4>
+     <div class="points-system" style="margin-left: 18px">
+       <i class="fas fa-medal" style="color: #edb953"></i> <h8 style= "font-size: 14px">
+        Total points: <%= humanized_money current_user.donations_sum/100 %> </h8>
       <% else %>
       <h4><strong><%= link_to('Log in', new_user_session_path, id: "loginavbar") %></strong></h4>
      <% end %>
+      </div>
   </div>
+</div>
 
     <ul>
-    <li> <%= link_to 'Profile', dashboard_path %> </li>
+    <% if user_signed_in? %>
+      <li> <%= link_to 'Profile', dashboard_path %> </li>
+    <% end %>
     <li> <%= link_to 'Explore', map_path %> </li>
     <li> <%= link_to 'Current Issues', issues_path %> </li>
     <% if user_signed_in? %>

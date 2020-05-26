@@ -157,24 +157,23 @@ h3 {
   transition: all 0.4s;
   outline: none !important;
   line-height: 1;
-  justify-content: space-between;
 
 
   input{
     border-radius: 6px;
     background: #3C3C3C;
     border: 0;
-    width: 93%;
+    width: 117%;
     margin-top: 57px;
-    margin-left: 32px;
     font-size: 13px;
     line-height: 7.5;
+    text-align: left;
   }
 
   i{
     position: relative;
-    left: 210px;
-    top: 35px;
+    left: 185px;
+    top: 65px;
     color: #A7A6A6;
   }
 }

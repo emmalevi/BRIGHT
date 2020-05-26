@@ -1,20 +1,46 @@
-<div class="container">
-  <div class="row py-4">
+<div id="portfolio" class="portfolio" style= "padding-top:120px; padding-left:25px">
+  <div class="container">
+      <div class="section-title">
+        <h2 id="logo">BRIGHT</h2>
+        <p>Payment Summary</p>
+      </div>
+  </div>
+</div>
 
-    <div class="col">
-      <h1>Summary</h1>
-      <p>Donation of <strong><%= "$#{@donation.amount_cents / 100}" %></strong> for <strong><%= @donation.charity.name %></strong></p>
-      <button id="pay" class="btn btn-success">Donate</button>
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @donation.session_id %>'
-          });
-        });
-      </script>
+<div class="payment-container">
+
+  <p>Keep going. You are about to change the <strong>world.</strong></p>
+  <div class="issue-show" style="background-color:#1A1B1D">
+    <div id="resume" class="resume">
+      <div class="resume-item" style="margin-top:10px">
+        <h5>Amount: <%= @donation.amount_cents / 100 %>  <%= @donation.price_currency %> </h5>
+      </div>
+      <div class="resume-item"><strong>To:</strong>
+      </div>
+      <div class="resume-item mb-3">
+        <h5>Charity: <strong> <%= @donation.charity.name %> </strong></h5>
+      </div>
     </div>
   </div>
 </div>
+
+<div class="d-flex justify-content-center" style="padding:40px">
+  <button id="pay" class="btn-pay">Confirm donation</button>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    const paymentButton = document.getElementById('pay');
+    paymentButton.addEventListener('click', () => {
+      const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+      stripe.redirectToCheckout({
+        sessionId: '<%= @donation.session_id %>'
+      });
+    });
+  </script>
+</div>
+<div class="d-flex justify-content-center" style="padding-top:50px">
+<%= link_to 'Back to exploration', map_path %>
+</div>
+
+
+
+

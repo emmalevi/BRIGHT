@@ -27,19 +27,37 @@
             <p>Rating: <%= @charity.rating %></p>
           </div>
 
-            <div class="resume-item">
-              <h4>Donate Now</h4>
+           <div class="container">
+    <h5 style= "margin-left: 15px; margin-top: 35px"><strong>Have an impact.</strong></h5>
+    <div class="issue-show">
+      <div class="container ml-4">
+        <div class="section-title">
+          <h2 style= "margin-top:20px"><strong>Donate now</strong></h2>
+          </div>
+        </div>
+      </div>
+
+
+
               <%= form_tag [@issue, @charity, Donation.new] do %>
                 <div class="row">
-                  <div class="col-4">
-                    <%= submit_tag '$5', class: 'btn btn-success m-1' %>
-                    <%= submit_tag '$10', class: 'btn btn-success m-1' %>
-                    <%= submit_tag '$20', class: 'btn btn-success m-1' %>
-                    <%= submit_tag '$50', class: 'btn btn-success m-1' %>
-                    <%= submit_tag '$100', class: 'btn btn-success m-1' %>
-                    <%= submit_tag '$200', class: 'btn btn-success m-1' %>
-                    <%= submit_tag '$200', class: 'btn btn-success m-1' %>
-                    <%= number_field_tag 'Other amount', nil, min: 1, class: 'btn btn-success m-1' %>
+                  <% @amounts.each do |amount| %>
+                    <div class="col-5">
+                      <a href="#" data-amount="<%= amount %>" class="btn btn-success btn-block m-2 donate-amount-fixed">$<%= amount %></a>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="row">
+                  <div class="col-10">
+                    <%= number_field_tag 'amount', nil, min: 1,
+                        class: 'btn btn-success btn-block m-2 donate-amount',
+                        data: { amount: 'custom' },
+                        placeholder: 'Type your amount' %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-10 text-center">
+                    <%= submit_tag 'Donate', id: 'donatebtn' %>
                   </div>
                 </div>
               <% end %>
@@ -50,3 +68,4 @@
     </div>
   </div>
 </div>
+

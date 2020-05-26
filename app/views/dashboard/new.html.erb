@@ -3,7 +3,7 @@
 
   <div id="image-avatar">
     <% if current_user && current_user.avatar.attached? %>
-    <%= cl_image_tag(current_user.avatar.key, class: "img-circle", width: "100px") %>
+    <%= cl_image_tag(current_user.avatar.key, class: "img-circle", width: 100, height: 100, crop: :fill, gravity: :auto) %>
     <% else %>
     <%= image_tag "https://cdn3.iconfinder.com/data/icons/essential-rounded/64/Rounded-31-512.png", class: "img-circle", width: "100px"%>
     <% end %>
@@ -15,7 +15,7 @@
    <!-- <div class="d-flex align-items-center"> -->
      <div class="points-system" style="margin-right: 10px; margin-left: 0px;">
        <i class="fas fa-medal" style="color: #edb953"></i> <h8 style= "font-size: 14px;">
-        Total points: <%= humanized_money current_user.donations_sum/100 %>
+        Total points: <%= humanized_money current_user.donations_sum/100 %> </h8>
 
         <div>
           <% if current_user.donations_sum >= 0 && current_user.donations_sum < 50 %>
@@ -47,9 +47,9 @@
         </div>
 
 
-      </div>
     </div>
   </div>
+</div>
 
 
   <div class="container">
@@ -57,29 +57,20 @@
     <div class="issue-show">
       <div class="container ml-4">
         <div class="section-title">
-          <h2 style= "margin-top:20px">Total Donated: <strong>$<%= humanized_money current_user.donations_sum %></h2>
-          </div>
+          <h2 style= "margin-top:20px">Total Donated: <strong>$<%= humanized_money current_user.donations_sum %> </strong></h2>
         </div>
       </div>
-      <div class="grey-container" id="map"
-      style="
-      width: 365px;
-      height: 380px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      padding: 15px;
-      margin-top: 330px;
-      padding:13px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      >
     </div>
   </div>
-</div>
-</div>
+  <div class="grey-container dashboard-map" id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-is-dashboard="true"
+    >
+  </div>
 
 
-<div class="issue-show" style= "padding-top:400px">
+<div class="issue-show">
   <div class="container ml-4">
     <div id="resume" class="resume">
 
@@ -102,15 +93,14 @@
   </div>
 
 <div style="padding-top: 30px"></div>
-      <p class="text-center p-0 mt-1 mb-3"><strong>Spread</strong> the word around you:</p>
-      <div class="text-center p-0 social-links">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-    <div style="padding-top: 30px"></div>
+<p class="text-center p-0 mt-1 mb-3"><strong>Spread</strong> the word around you:</p>
+<div class="text-center p-0 social-links">
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-whatsapp"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+<div style="padding-top: 30px"></div>
 
 
 

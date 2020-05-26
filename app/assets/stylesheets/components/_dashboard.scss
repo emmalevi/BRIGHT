@@ -91,6 +91,23 @@ Everything below here belongs to the causes and map layout
     height: max-content;
 }
 
+.dashboard-map-wrapper {
+  max-width: 80%;
+  width: 80%;
+  overflow-x: hidden;
+}
+
+.dashboard-map{
+  /*width: 350px !important;*/
+  width: 95vw !important;
+  height: 380px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  position: relative !important;
+}
+
 /*Media Queries*/
 
 /*Smallest device*/

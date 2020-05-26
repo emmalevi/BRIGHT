@@ -1,20 +1,27 @@
-<div class="container">
-  <div class="row py-4">
+ <div class="issue-show">
+  <div class="container ml-2">
+    <div id="resume" class="resume">
 
-    <div class="col">
-      <h1>Summary</h1>
-      <p>Donation of <strong><%= "$#{@donation.amount_cents / 100}" %></strong> for <strong><%= @donation.charity.name %></strong></p>
-      <button id="pay" class="btn btn-success">Donate</button>
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @donation.session_id %>'
+      <div class="col">
+        <h1>Summary</h1>
+
+        <% if @donation.charity.photo.attached? %>
+          <img src=<%= cl_image_path @donation.charity.photo.key, width: 400, height: 300, crop: :fill %> id="img-show" alt="">
+        <% end %>
+
+        <p>Donation of <strong><%= "$#{@donation.amount_cents / 100}" %></strong> for <strong><%= @donation.charity.name %></strong></p>
+        <button id="pay" class="btn btn-success">Donate</button>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+          const paymentButton = document.getElementById('pay');
+          paymentButton.addEventListener('click', () => {
+            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+            stripe.redirectToCheckout({
+              sessionId: '<%= @donation.session_id %>'
+            });
           });
-        });
-      </script>
+        </script>
+      </div>
     </div>
   </div>
 </div>

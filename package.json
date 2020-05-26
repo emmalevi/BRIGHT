@@ -7,6 +7,7 @@
     "jquery": "^3.5.0",
     "mapbox-gl": "^1.10.0",
     "popper.js": "^1.16.1",
+    "swiper": "^5.4.1",
     "typed.js": "^2.0.11"
   },
   "devDependencies": {

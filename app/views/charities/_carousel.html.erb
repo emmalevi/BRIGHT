@@ -1,0 +1,36 @@
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+
+        <!-- Slides -->
+        <% issue.charities.each do |charity| %>
+          <div class="swiper-slide">
+              <!-- div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" -->
+              <% if charity.photo.attached? %>
+              <% background_url = cl_image_path charity.photo.key, width: 400, height: 500, crop: :fill %>
+              <% else %>
+              <% background_url = 'https://images.unsplash.com/photo-1585859537744-6e62df9b9a5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80' %>
+              <% end %>
+              <div class="icon-box" style="background-image:url('<%= background_url %>')">
+                <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h4><%= link_to charity.name, issue_charity_path(issue, charity) %> </h4>
+                <p> Rating: <%= charity.rating %></p>
+              </div>
+            <!--/div -->
+          </div>
+        <% end %>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+
+
+

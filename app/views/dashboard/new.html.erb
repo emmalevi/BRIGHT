@@ -80,7 +80,7 @@
            <div class="resume-item">
             <h5><%= link_to d.issue.name, issue_path(d.issue) %></h5>
             <ul style= "font-size: 14px">
-              <li>Amount: <%= d.amount_cents/100 %> <%= d.price_currency %> </li>
+              <li>Amount: $<%= d.amount_cents/100 %></li>
               <li>Earned points: <%= d.amount_cents/1000 %></li>
             </ul>
           </div>

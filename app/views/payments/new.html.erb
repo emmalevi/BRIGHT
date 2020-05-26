@@ -1,4 +1,4 @@
-<div id="portfolio" class="portfolio" style= "padding-top:120px; padding-left:25px">
+<div id="portfolio" class="portfolio" style= "padding-top:100px; padding-left:25px">
   <div class="container">
       <div class="section-title">
         <h2 id="logo">BRIGHT</h2>
@@ -6,6 +6,10 @@
       </div>
   </div>
 </div>
+
+ <% if @donation.charity.photo.attached? %>
+    <img src=<%= cl_image_path @donation.charity.photo.key, width: 400, height: 300, crop: :fill %> id="img-show" alt="">
+<% end %>
 
 <div class="payment-container">
 
@@ -19,6 +23,7 @@
       </div>
       <div class="resume-item mb-3">
         <h5>Charity: <strong> <%= @donation.charity.name %> </strong></h5>
+
       </div>
     </div>
   </div>

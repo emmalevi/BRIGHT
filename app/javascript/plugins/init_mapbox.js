@@ -21,7 +21,7 @@ const addMarkersToMap = (map, markers) => {
     element.style.backgroundImage = `url('${marker.image_url}')`;
     element.style.backgroundSize = 'contain';
     element.style.width = '25px';
-    element.style.height = '25px'; 
+    element.style.height = '25px';
 
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
@@ -44,6 +44,9 @@ const initMapbox = () => {
     if (markers.length > 0) {
       addMarkersToMap(map, markers);
       fitMapToMarkers(map, markers);
+    }
+    if (mapElement.dataset.isDashboard) {
+      document.body.style.overflowX = 'hidden';
     }
   }
 };

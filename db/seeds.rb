@@ -179,6 +179,8 @@ charity1 = Charity.create!(
   total_donations: 28382344,
   rating: "5"
 )
+charity1_photo = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Flag_of_the_ICRC.svg/1200px-Flag_of_the_ICRC.svg.png')
+charity1.photo.attach(io: charity1_photo, filename: 'charity2.jpg', content_type: 'image/jpg')
 
 charity2 = Charity.create!(
   name: 'Kids Wish Network',
@@ -187,6 +189,8 @@ charity2 = Charity.create!(
   total_donations: 38484732,
   rating: "3"
 )
+charity2_photo = URI.open('https://images.squarespace-cdn.com/content/v1/566b210340667a1cc1623840/1581112819783-X9I8PQAUNESMJ2AXK8LQ/ke17ZwdGBToddI8pDm48kL6Gv8ZO6JV7Z4ifWuMgNDp7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UfwSeTrjJXgRaFvmKmLknDKbcrwOXCbPKyMoGFGIZIboOpYghpI-Ha_TwZsqqmJXng/kwn_circle_logo_large.png.jpg')
+charity2.photo.attach(io: charity2_photo, filename: 'charity2.jpg', content_type: 'image/jpg')
 
 charity3 = Charity.create!(
   name: 'Tsunami Relief Aid',
@@ -195,6 +199,8 @@ charity3 = Charity.create!(
   total_donations: 29349322,
   rating: "3"
 )
+charity3_photo = URI.open('https://www.unicef.org/sites/default/files/styles/hero_mobile/public/UN0251766.jpg')
+charity3.photo.attach(io: charity3_photo, filename: 'charity3.jpg', content_type: 'image/jpg')
 
 charity4 = Charity.create!(
   name: 'Worldwide CARE',
@@ -203,6 +209,8 @@ charity4 = Charity.create!(
   total_donations: 185000000,
   rating: "4"
 )
+charity4_photo = URI.open('https://www.care.org/sites/all/themes/CARE/images/care-social-image.png')
+charity4.photo.attach(io: charity4_photo, filename: 'charity4.jpg', content_type: 'image/jpg')
 
 charity6 = Charity.create!(
  name: 'Radiation Effects Research Foundation',
@@ -211,14 +219,18 @@ charity6 = Charity.create!(
  total_donations: 0,
  rating: "2"
 )
+charity6_photo = URI.open('https://i1.wp.com/gethiroshima.com/wp-content/uploads/2017/07/RERF.jpg')
+charity6.photo.attach(io: charity6_photo, filename: 'charity6.jpg', content_type: 'image/jpg')
 
 charity7 = Charity.create!(
-  name: 'International Rescue Comitee',
-  description: ' It responds to the world humanitarian crises, helping restore health, safety, economic well being and power to people devastated by conflict and disaster.',
+  name: 'International Rescue Commitee',
+  description: 'It responds to the world humanitarian crises, helping restore health, safety, economic well being and power to people devastated by conflict and disaster.',
   issues: [issue1],
   total_donations: 278589143,
   rating: "4"
 )
+charity7_photo = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/International_Rescue_Committee_Logo.svg/1200px-International_Rescue_Committee_Logo.svg.png')
+charity7.photo.attach(io: charity7_photo, filename: 'charity7.jpg', content_type: 'image/jpg')
 
 charity8 = Charity.create!(
   name: 'CDC Foundation',
@@ -227,6 +239,8 @@ charity8 = Charity.create!(
   total_donations: 52872451,
   rating: "4"
 )
+charity8_photo = URI.open('https://www.mip-consortium.org/sites/mip/files/styles/grid-6-mobile-logo-16x9/public/content/organisation/logos/2017-12-11/cdc.png')
+charity8.photo.attach(io: charity8_photo, filename: 'charity8.jpg', content_type: 'image/jpg')
 
 charity9 = Charity.create!(
   name: 'AIDS United',
@@ -235,6 +249,8 @@ charity9 = Charity.create!(
   total_donations: 11794750,
   rating: "3"
 )
+charity9_photo = URI.open('https://www.dallasweekly.com/wp-content/uploads/images/2013-09-13/299855e47968235d2d81dbd430d0ce2f.jpg')
+charity9.photo.attach(io: charity9_photo, filename: 'charity9.jpg', content_type: 'image/jpg')
 
 charity10 = Charity.create!(
   name: 'amfAR',
@@ -243,6 +259,8 @@ charity10 = Charity.create!(
   total_donations: 47731778,
   rating: "3"
 )
+charity10_photo = URI.open('https://www.abddirect.com/wp-content/uploads/2013/10/Amfar.png')
+charity10.photo.attach(io: charity10_photo, filename: 'charity10.jpg', content_type: 'image/jpg')
 
 charity11 = Charity.create!(
   name: 'American Friends Service Committee',

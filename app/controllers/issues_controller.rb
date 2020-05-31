@@ -3,11 +3,23 @@ class IssuesController < ApplicationController
   before_action :set_issue, only: [:show, :edit, :update, :destroy]
 
   def index
+    @category = 'All'
     if params[:query].present? #display search results for issues
       @query = params[:query]
       @issues = Issue.search_by_name_location_and_description(@query)
     else #display all issues if no search was done
       @issues = Issue.all
+    end
+
+    if params[:category].present? #display search results for issues
+      @category = params[:category]
+      if @category == 'All'
+        @issues = Issue.all
+      elsif @category == 'Other'
+        @issues = Issue.all.select {|i| i.issue_type != 'Pandemic' && i.issue_type != 'Natural Disaster' }
+      else
+        @issues = Issue.where(issue_type: @category)
+      end
     end
   end
 

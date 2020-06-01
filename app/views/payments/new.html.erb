@@ -1,4 +1,5 @@
-<div id="portfolio" class="portfolio" style= "padding-top:100px; padding-left:25px">
+ <p id="logomap" style="padding-top: 7px">BRIGHT</p>
+<div id="portfolio" class="portfolio" style= "padding-top:70px; padding-left:25px">
   <div class="container">
       <div class="section-title">
         <h2 id="logo">BRIGHT</h2>
@@ -7,13 +8,15 @@
   </div>
 </div>
 
- <% if @donation.charity.photo.attached? %>
-    <img src=<%= cl_image_path @donation.charity.photo.key, width: 400, height: 300, crop: :fill %> id="img-show" alt="">
-<% end %>
-
 <div class="payment-container">
 
   <p>Keep going. You are about to change the <strong>world.</strong></p>
+<div class="text-center p-2">
+<% if @donation.charity.photo.attached? %>
+    <%= cl_image_tag @donation.charity.photo.key, class: "img-circle", width: 80, height: 80, crop: :fill, gravity: :auto %>
+<% end %>
+</div>
+
   <div class="issue-show" style="background-color:#1A1B1D">
     <div id="resume" class="resume">
       <div class="resume-item" style="margin-top:10px">
@@ -42,9 +45,10 @@
     });
   </script>
 </div>
-<div class="d-flex justify-content-center" style="padding-top:50px">
+<div class="d-flex justify-content-center">
 <%= link_to 'Back to exploration', map_path %>
 </div>
+<div style="padding-top: 30px"></div>
 
 
 

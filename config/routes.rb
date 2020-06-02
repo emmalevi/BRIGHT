@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  get 'map', to: 'issues#map', as: :map 
+  get 'map', to: 'issues#map', as: :map
 
   #Issues
   resources :issues, only: [:index, :show] do

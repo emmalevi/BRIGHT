@@ -269,6 +269,8 @@ charity11 = Charity.create!(
   total_donations: 0,
   rating: "1"
 )
+charity11_photo = URI.open('https://idcoalition.org/wp-content/uploads/2016/01/American-Friends-Service-Committee.jpg')
+charity11.photo.attach(io: charity11_photo, filename: 'charity11.jpg', content_type: 'image/jpg')
 
 charity12 = Charity.create!(
   name: 'Atomic Heritage Foundation',
@@ -277,6 +279,8 @@ charity12 = Charity.create!(
   total_donations: 0,
   rating: "2"
 )
+charity12_photo = URI.open('https://www.atomicheritage.org/sites/default/files/NUC_logo_bw.jpg')
+charity12.photo.attach(io: charity12_photo, filename: 'charity12.jpg', content_type: 'image/jpg')
 
 charity13 = Charity.create!(
   name: 'Mealshare',
@@ -285,6 +289,8 @@ charity13 = Charity.create!(
   total_donations: 3681209,
   rating: "3"
 )
+charity13_photo = URI.open('https://scontent.ftlv1-2.fna.fbcdn.net/v/t1.0-9/10710785_628070527311426_8325127363999821504_n.png?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=jANOEozDBuQAX_gA9JD&_nc_ht=scontent.ftlv1-2.fna&oh=7e970b88780867a9ec94fa06e5f19536&oe=5EF8D64B')
+charity13.photo.attach(io: charity13_photo, filename: 'charity13.jpg', content_type: 'image/jpg')
 
 charity14 = Charity.create!(
   name: 'No Kid Hungry',
@@ -293,6 +299,8 @@ charity14 = Charity.create!(
   total_donations: 57600000,
   rating: "4.5"
 )
+charity14_photo = URI.open('https://i7.pngflow.com/pngimage/858/413/png-no-kid-hungry-logo-share-our-strength-hunger-nutrition-month-logo-child-food-text-orange-clipart.png')
+charity14.photo.attach(io: charity14_photo, filename: 'charity14.jpg', content_type: 'image/jpg')
 
 charity15 = Charity.create!(
   name: 'Direct Relief',
@@ -301,6 +309,8 @@ charity15 = Charity.create!(
   total_donations: 2000000,
   rating: "4"
 )
+charity15_photo = URI.open('https://blog.qlik.com/assets/uploads/images/direct-relief.jpg')
+charity15.photo.attach(io: charity15_photo, filename: 'charity15.jpg', content_type: 'image/jpg')
 
 charity16 = Charity.create!(
   name: 'Haitian Health Foundation',
@@ -309,6 +319,8 @@ charity16 = Charity.create!(
   total_donations: 2938579,
   rating: "3.5"
 )
+charity16_photo = URI.open('https://i.pinimg.com/280x280_RS/c0/e6/6a/c0e66ab2ea2898599d3b2a107bf5dc9b.jpg')
+charity16.photo.attach(io: charity16_photo, filename: 'charity16.jpg', content_type: 'image/jpg')
 
 charity17 = Charity.create!(
   name: 'American Jewish Committee',
@@ -317,6 +329,8 @@ charity17 = Charity.create!(
   total_donations: 450000,
   rating: "3"
 )
+charity17_photo = URI.open('https://embedwistia-a.akamaihd.net/deliveries/c9d221492c2b6fbbb8a40a2e57eae0a4.webp?image_crop_resized=1280x720')
+charity17.photo.attach(io: charity17_photo, filename: 'charity17.jpg', content_type: 'image/jpg')
 
 charity18 = Charity.create!(
   name: 'Humanity First',
@@ -325,6 +339,8 @@ charity18 = Charity.create!(
   total_donations: 1500000,
   rating: "3"
 )
+charity18_photo = URI.open('https://covid19.humanityfirst.org/wp-content/uploads/2020/03/logo.jpg')
+charity18.photo.attach(io: charity18_photo, filename: 'charity18.jpg', content_type: 'image/jpg')
 
 charity19 = Charity.create!(
   name: 'Care USA',
@@ -333,6 +349,8 @@ charity19 = Charity.create!(
   total_donations: '213000000',
   rating: "5"
 )
+charity19_photo = URI.open('https://pbs.twimg.com/profile_images/1200359166893871104/_iDQOOAN_400x400.jpg')
+charity19.photo.attach(io: charity19_photo, filename: 'charity19.jpg', content_type: 'image/jpg')
 
 charity20 = Charity.create!(
   name: 'Direct Relief Foundation',
@@ -341,6 +359,8 @@ charity20 = Charity.create!(
   total_donations: '41000000',
   rating: "4.5"
 )
+charity20_photo = URI.open('https://w7.pngwing.com/pngs/765/191/png-transparent-direct-relief-charitable-organization-united-states-donation-charity-navigator-united-states-text-orange-logo.png')
+charity20.photo.attach(io: charity20_photo, filename: 'charity20.jpg', content_type: 'image/jpg')
 
 charity21 = Charity.create!(
   name: 'Mercy Corps',
@@ -349,6 +369,8 @@ charity21 = Charity.create!(
   total_donations: '268000000',
   rating: "3"
 )
+charity21_photo = URI.open('https://w7.pngwing.com/pngs/765/191/png-transparent-direct-relief-charitable-organization-united-states-donation-charity-navigator-united-states-text-orange-logo.png')
+charity21.photo.attach(io: charity21_photo, filename: 'charity21.jpg', content_type: 'image/jpg')
 
 charity22 = Charity.create!(
   name: 'Project C.U.R.E.',
@@ -357,6 +379,8 @@ charity22 = Charity.create!(
   total_donations: '78652976',
   rating: "4"
 )
+charity22_photo = URI.open('https://ability360.org/wp-content/uploads/2017/07/2017-07-05-Project-CURE-WP.jpg')
+charity22.photo.attach(io: charity22_photo, filename: 'charity22.jpg', content_type: 'image/jpg')
 
 charity23 = Charity.create!(
   name: 'International Community Foundation',
@@ -365,6 +389,8 @@ charity23 = Charity.create!(
   total_donations: '13756399',
   rating: "3.5"
 )
+charity23_photo = URI.open('https://3i9i2q3n686v427cr941c7do-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/icf-menu-logo.jpg')
+charity23.photo.attach(io: charity23_photo, filename: 'charity23.jpg', content_type: 'image/jpg')
 
 charity24 = Charity.create!(
   name: 'Save the Children',
@@ -373,6 +399,8 @@ charity24 = Charity.create!(
   total_donations: '494807970',
   rating: "3"
 )
+charity24_photo = URI.open('https://3i9i2q3n686v427cr941c7do-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/icf-menu-logo.jpg')
+charity24.photo.attach(io: charity24_photo, filename: 'charity24.jpg', content_type: 'image/jpg')
 
 charity25 = Charity.create!(
   name: 'Africare',
@@ -381,6 +409,8 @@ charity25 = Charity.create!(
   total_donations: '100000',
   rating: "2.5"
 )
+charity25_photo = URI.open('https://3i9i2q3n686v427cr941c7do-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/icf-menu-logo.jpg')
+charity25.photo.attach(io: charity25_photo, filename: 'charity25.jpg', content_type: 'image/jpg')
 
 charity26 = Charity.create!(
   name: 'BHP',
@@ -389,6 +419,8 @@ charity26 = Charity.create!(
   total_donations: '400000',
   rating: "3.5"
 )
+charity26_photo = URI.open('https://cdn.imgbin.com/11/8/2/imgbin-logo-bhp-billiton-ltd-bulan-sabit-hiQUAHCvqKGSbvg6bBMwFpScn.jpg')
+charity26.photo.attach(io: charity26_photo, filename: 'charity26.jpg', content_type: 'image/jpg')
 
 charity27 = Charity.create!(
   name: 'Cigna Foundation',
@@ -397,6 +429,8 @@ charity27 = Charity.create!(
   total_donations: '50000',
   rating: "2.5"
 )
+charity27_photo = URI.open('https://www.cigna.com/static/www-cigna-com/images/employers-brokers/who-we-serve/government/sponsorships/sponsorships-5-16x9-md.jpg')
+charity27.photo.attach(io: charity27_photo, filename: 'charity27.jpg', content_type: 'image/jpg')
 
 charity28 = Charity.create!(
   name: 'ShelterBox',
@@ -405,6 +439,8 @@ charity28 = Charity.create!(
   total_donations: '50000',
   rating: "2"
 )
+charity28_photo = URI.open('https://www.shelterbox.org/wp-content/uploads/2019/08/ShelterBox_horizontal_logo_RGB.jpg')
+charity28.photo.attach(io: charity28_photo, filename: 'charity28.jpg', content_type: 'image/jpg')
 
 charity29 = Charity.create!(
   name: 'Caritas Internationals',
@@ -413,6 +449,8 @@ charity29 = Charity.create!(
   total_donations: '3057370',
   rating: "3.5"
 )
+charity29_photo = URI.open('https://jliflc.com/wp-content/uploads/2017/01/Caritas-Internationalis-460x247.png')
+charity29.photo.attach(io: charity29_photo, filename: 'charity29.jpg', content_type: 'image/jpg')
 
 charity30 = Charity.create!(
   name: 'Something Awful',
@@ -421,6 +459,8 @@ charity30 = Charity.create!(
   total_donations: '71750',
   rating: "2.5"
 )
+charity30_photo = URI.open('https://upload.wikimedia.org/wikipedia/en/4/47/Something_Awful_logo.png')
+charity30.photo.attach(io: charity30_photo, filename: 'charity30.jpg', content_type: 'image/jpg')
 
 charity31 = Charity.create!(
   name: 'Freedom From Hunger`s',
@@ -429,6 +469,8 @@ charity31 = Charity.create!(
   total_donations: '3595872',
   rating: "3"
 )
+charity31_photo = URI.open('https://www.freedomfromhunger.org/sites/default/files/FFH_ResearchInnovation_102416.jpg')
+charity31.photo.attach(io: charity31_photo, filename: 'charity31.jpg', content_type: 'image/jpg')
 
 charity32 = Charity.create!(
   name: 'Against Malaria Foundation',
@@ -437,6 +479,8 @@ charity32 = Charity.create!(
   total_donations: '117400000',
   rating: "4"
 )
+charity32_photo = URI.open('https://pbs.twimg.com/profile_images/938722480100843525/WcngtvBa_400x400.jpg')
+charity32.photo.attach(io: charity32_photo, filename: 'charity32.jpg', content_type: 'image/jpg')
 
 charity33 = Charity.create!(
   name: 'World Vision',
@@ -445,5 +489,7 @@ charity33 = Charity.create!(
   total_donations: '716808791',
   rating: "3.5"
 )
+charity33_photo = URI.open('https://junioreurovision.tv/hb-cgi/images/8deda1a5-0276-4b85-9eb7-64318bda0556/hero.jpg')
+charity33.photo.attach(io: charity33_photo, filename: 'charity33.jpg', content_type: 'image/jpg')
 
 puts "Seeds completed!"

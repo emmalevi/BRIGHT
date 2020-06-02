@@ -11,10 +11,10 @@
           <div class="row">
             <div class="col-lg-8 d-flex justify-content-center">
               <ul id="portfolio-flters">
-                <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-app">Pandemic</li>
-                <li data-filter=".filter-card">Natural Disaster</li>
-                <li data-filter=".filter-web">Other</li>
+               <%= link_to issues_path(category: 'All') do %><li data-filter="*" class="<%= @category == 'All' ? 'filter-active' : '' %>">All</li><% end %>
+                <%= link_to issues_path(category: 'Pandemic') do %><li data-filter=".filter-app" class="<%= @category == 'Pandemic' ? 'filter-active' : '' %>">Pandemic</li><% end %>
+                <%= link_to issues_path(category: 'Natural Disaster') do %><li data-filter=".filter-card" class="<%= @category == 'Natural Disaster' ? 'filter-active' : '' %>">Natural Disaster</li><% end %>
+                <%= link_to issues_path(category: 'Other') do %><li data-filter=".filter-web" class="<%= @category == 'Other' ? 'filter-active' : '' %>">Other</li><% end %>
               </ul>
             </div>
           </div>

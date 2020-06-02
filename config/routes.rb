@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get 'brighter', to: 'pages#brighter'
 
   get 'map', to: 'issues#map', as: :map
 

@@ -1,13 +1,13 @@
-<div class="devise-page">
-  <div class="devise-container">
-    <div class="devise-top">
+<div class="brighter-page">
+  <div class="brighter-container">
+    <div class="brighter-top">
       <div class="row search-bar">
         <p id="logomap">BRIGHT</p>
       </div>
 
       <h2 class="text-center"><i class="fas fa-check-circle"></i></h2>
-      <h2 id="logo">Thank you</h2>
-      <p class="text-center">For making the world <strong>brighter</strong>.</p>
+      <h2 id="logo">Thank you, <%= current_user.username.capitalize %> </h2>
+      <h3 class="text-center" id="banner2-typed-text"></h3>
       <div class= "ecarter">
       </div>
 
@@ -15,7 +15,7 @@
       <div class="text-center p-3 social-links">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-whatsapp"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-linkedin-in"></i></a>
       </div>
 
@@ -28,5 +28,6 @@
     </div>
   </div>
 </div>
+<%= javascript_pack_tag 'banner2' %>
 
 <!-- @donation.charity will give me charity -->

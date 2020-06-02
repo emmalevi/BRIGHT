@@ -1,0 +1,17 @@
+    <div class="brighterpage">
+       <p id="logomap">BRIGHT</p>
+<div style="padding-top:2px"></div>
+
+ <% if user_signed_in? %>
+ <h2 class= "text-center mb-3" id="dearbrighter">Dear <%= current_user.username.capitalize %>,</h2>
+      <% else %>
+<h2 class= "text-center mb-3" id="dearbrighter">BRIGHT</h2>
+     <% end %>
+
+<div style="padding-top:20px"></div>
+<strong><h2 class= "text-center mb-3" id="banner2-typed-text"></h2></strong>
+
+</div>
+
+<%= javascript_pack_tag 'banner2' %>
+<%= javascript_pack_tag 'brighterPage' %>

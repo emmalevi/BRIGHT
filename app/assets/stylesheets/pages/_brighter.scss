@@ -1,0 +1,35 @@
+.brighterpage {
+height: 100vh;
+background-image: url("https://www-prd-mod-com.azureedge.net/fr-ca/-/media/MapDark-new.gif?h=538&la=fr-CA&w=1058&hash=6853131C4947897C1E145D333578BC3A");
+filter: contrast(1.8);
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+#banner2-typed-text {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 600;
+  margin-top: 23vh;
+  font-size: 37px;
+  color:#18d26e;
+  padding:40px;
+  padding-top:10vh;
+}
+
+#dearbrighter {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 23px;
+  text-align:center;
+  padding-top:14vh;
+}
+
+#logomap {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 600;
+  margin-left: 13px;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+}

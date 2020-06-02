@@ -2,21 +2,21 @@
 
 
 <!-- dashboard code -->
-<div class="d-flex align-items-center" style="padding:20px" >
+<div class="d-flex align-items-center" style="padding:30px" >
 
   <div id="image-avatar">
     <% if current_user && current_user.avatar.attached? %>
     <%= cl_image_tag(current_user.avatar.key, class: "img-circle", width: 80, height: 80, crop: :fill, gravity: :auto) %>
     <% else %>
-    <%= image_tag "https://cdn3.iconfinder.com/data/icons/essential-rounded/64/Rounded-31-512.png", class: "img-circle", width: 70, height: 70, crop: :fill, gravity: :auto %>
+    <%= image_tag "https://i7.pngguru.com/preview/536/90/375/computer-icons-user-profile-login-avatar-description.jpg", class: "img-circle", width: 70, height: 70, crop: :fill, gravity: :auto %>
     <% end %>
   </div>
 
   <div>
     <% if user_signed_in? %>
    <h4 style= "margin-bottom:4px" id="loginavbar"><strong> <%= current_user.username.capitalize %> </strong></h4>
-     <div class="points-system" style="margin-left: 18px">
-       <i class="fas fa-medal" style="color: #edb953"></i> <h8 style= "font-size: 14px">
+     <div class="points-system">
+       <i class="fas fa-medal" style="color: #edb953;margin-left:19px"></i> <h8 style= "font-size: 14px">
         Total points: <%= humanized_money current_user.donations_sum/100 %> </h8>
       <% else %>
       <h4><strong><%= link_to('Log in', new_user_session_path, id: "loginavbar") %></strong></h4>

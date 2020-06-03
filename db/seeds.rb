@@ -309,7 +309,7 @@ charity15 = Charity.create!(
   total_donations: 2000000,
   rating: "4"
 )
-charity15_photo = URI.open('https://blog.qlik.com/assets/uploads/images/direct-relief.jpg')
+charity15_photo = URI.open('https://i0.wp.com/www.directrelief.org/wp-content/uploads/DirectRelief_Logomark_RGB.png')
 charity15.photo.attach(io: charity15_photo, filename: 'charity15.jpg', content_type: 'image/jpg')
 
 charity16 = Charity.create!(

@@ -81,7 +81,6 @@ ActiveRecord::Schema.define(version: 2020_05_22_061619) do
     t.integer "impacted_population"
     t.string "death_count"
     t.text "origin"
-    t.string "type"
     t.text "issue_type"
   end
 

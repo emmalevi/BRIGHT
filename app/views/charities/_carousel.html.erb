@@ -8,11 +8,11 @@
           <div class="swiper-slide">
 
               <% if charity.photo.attached? %>
-              <% background_url = cl_image_path charity.photo.key, width: 400, height: 500, crop: :fill, gravity: :auto  %>
+              <% background_url = cl_image_path charity.photo.key, width: 400, height: 300, crop: :fill   %>
               <% else %>
               <% background_url = 'https://images.unsplash.com/photo-1585859537744-6e62df9b9a5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80' %>
               <% end %>
-              <div class="icon-box" style="background-image:url('<%= background_url %>')">
+              <div class="icon-box" style="background-image: linear-gradient(rgba(22,22,22,0.2), rgba(22,22,22,0.7)), url('<%= background_url %>')">
                 <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
                 <h4><%= link_to charity.name, issue_charity_path(issue, charity) %> </h4>
                 <p> Rating: <%= charity.rating %></p>
